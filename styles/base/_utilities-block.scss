@@ -1,0 +1,484 @@
+.d-none {
+	display: none !important;
+}
+
+.d-block {
+	display: block !important;
+}
+
+.d-inline-block {
+	display: inline-block !important;
+}
+
+.d-inline {
+	display: inline !important;
+}
+
+.d-flex {
+	display: flex !important;
+}
+
+@include mediaUp(sm) {
+	.d-sm-none {
+		display: none !important;
+	}
+
+	.d-sm-block {
+		display: block !important;
+	}
+
+	.d-sm-inline-block {
+		display: inline-block !important;
+	}
+
+	.d-sm-inline {
+		display: inline !important;
+	}
+
+	.d-sm-flex {
+		display: flex !important;
+	}
+}
+
+@include mediaUp(md) {
+	.d-md-none {
+		display: none !important;
+	}
+
+	.d-md-block {
+		display: block !important;
+	}
+
+	.d-md-inline-block {
+		display: inline-block !important;
+	}
+
+	.d-md-inline {
+		display: inline !important;
+	}
+
+	.d-md-flex {
+		display: flex !important;
+	}
+}
+
+@include mediaUp(lg) {
+	.d-lg-none {
+		display: none !important;
+	}
+
+	.d-lg-block {
+		display: block !important;
+	}
+
+	.d-lg-inline-block {
+		display: inline-block !important;
+	}
+
+	.d-lg-inline {
+		display: inline !important;
+	}
+
+	.d-lg-flex {
+		display: flex !important;
+	}
+}
+
+@include mediaUp(xl) {
+	.d-xl-none {
+		display: none !important;
+	}
+
+	.d-xl-block {
+		display: block !important;
+	}
+
+	.d-xl-inline-block {
+		display: inline-block !important;
+	}
+
+	.d-xl-inline {
+		display: inline !important;
+	}
+
+	.d-xl-flex {
+		display: flex !important;
+	}
+}
+
+.justify-start {
+	justify-content: flex-start !important;
+}
+
+.justify-end {
+	justify-content: flex-end !important;
+}
+
+.justify-center {
+	justify-content: center !important;
+}
+
+.justify-between {
+	justify-content: space-between !important;
+}
+
+.justify-around {
+	justify-content: space-around !important;
+}
+
+@include mediaUp(sm) {
+	.justify-sm-start {
+		justify-content: flex-start !important;
+	}
+
+	.justify-sm-end {
+		justify-content: flex-end !important;
+	}
+
+	.justify-sm-center {
+		justify-content: center !important;
+	}
+
+	.justify-sm-between {
+		justify-content: space-between !important;
+	}
+}
+
+@include mediaUp(md) {
+	.justify-md-start {
+		justify-content: flex-start !important;
+	}
+
+	.justify-md-end {
+		justify-content: flex-end !important;
+	}
+
+	.justify-md-center {
+		justify-content: center !important;
+	}
+
+	.justify-md-between {
+		justify-content: space-between !important;
+	}
+}
+
+@include mediaUp(lg) {
+	.justify-lg-start {
+		justify-content: flex-start !important;
+	}
+
+	.justify-lg-end {
+		justify-content: flex-end !important;
+	}
+
+	.justify-lg-center {
+		justify-content: center !important;
+	}
+
+	.justify-lg-between {
+		justify-content: space-between !important;
+	}
+}
+
+@include mediaUp(xl) {
+	.justify-xl-start {
+		justify-content: flex-start !important;
+	}
+
+	.justify-xl-end {
+		justify-content: flex-end !important;
+	}
+
+	.justify-xl-center {
+		justify-content: center !important;
+	}
+
+	.justify-xl-between {
+		justify-content: space-between !important;
+	}
+}
+
+.align-start {
+	align-items: flex-start !important;
+}
+
+.align-end {
+	align-items: flex-end !important;
+}
+
+.align-center {
+	align-items: center !important;
+}
+
+.align-stretch {
+	align-items: stretch !important;
+}
+
+.align-baseline {
+	align-items: baseline !important;
+}
+
+@include mediaUp(sm) {
+	.align-sm-start {
+		align-items: flex-start !important;
+	}
+
+	.align-sm-end {
+		align-items: flex-end !important;
+	}
+
+	.align-sm-center {
+		align-items: center !important;
+	}
+
+	.align-sm-stretch {
+		align-items: stretch !important;
+	}
+}
+
+@include mediaUp(md) {
+	.align-md-start {
+		align-items: flex-start !important;
+	}
+
+	.align-md-end {
+		align-items: flex-end !important;
+	}
+
+	.align-md-center {
+		align-items: center !important;
+	}
+
+	.align-md-stretch {
+		align-items: stretch !important;
+	}
+}
+
+@include mediaUp(lg) {
+	.align-lg-start {
+		align-items: flex-start !important;
+	}
+
+	.align-lg-end {
+		align-items: flex-end !important;
+	}
+
+	.align-lg-center {
+		align-items: center !important;
+	}
+
+	.align-lg-stretch {
+		align-items: stretch !important;
+	}
+}
+
+@include mediaUp(xl) {
+	.align-xl-start {
+		align-items: flex-start !important;
+	}
+
+	.align-xl-end {
+		align-items: flex-end !important;
+	}
+
+	.align-xl-center {
+		align-items: center !important;
+	}
+
+	.align-xl-stretch {
+		align-items: stretch !important;
+	}
+}
+
+
+/* Align self */
+
+.align-self-start {
+	align-self: flex-start !important;
+}
+
+.align-self-center {
+	align-self: center !important;
+}
+
+.align-self-end {
+	align-self: flex-end !important;
+}
+
+.align-self-baseline {
+	align-self: baseline !important;
+}
+
+
+/* Wrap */
+.flex-wrap {
+	flex-wrap: wrap !important;
+}
+
+.flex-nowrap {
+	flex-wrap: nowrap !important;
+}
+
+
+// Direction
+.flex-column {
+	flex-direction: column !important;
+}
+
+.flex-row {
+	flex-direction: row !important;
+}
+
+
+/* Transform */
+
+.rotate-90 {
+	transform: rotate(90deg) !important;
+}
+
+.rotate-180 {
+	transform: rotate(180deg) !important;
+}
+
+.rotate-270 {
+	transform: rotate(270deg) !important;
+}
+
+
+/* Rectangle size */
+
+.rect-8 {
+	width: 8px !important;
+	height: 8px !important;
+}
+
+.rect-10 {
+	width: 10px !important;
+	height: 10px !important;
+}
+
+.rect-12 {
+	width: 12px !important;
+	height: 12px !important;
+}
+
+.rect-12-16 {
+	width: 12px !important;
+	height: 16px !important;
+}
+
+.rect-13 {
+	width: 13px !important;
+	height: 13px !important;
+}
+
+.rect-14 {
+	width: 14px !important;
+	height: 14px !important;
+}
+
+.rect-14-10 {
+	width: 14px !important;
+	height: 10px !important;
+}
+
+.rect-16 {
+	width: 16px !important;
+	height: 16px !important;
+}
+
+.rect-18 {
+	width: 18px !important;
+	height: 18px !important;
+}
+
+.rect-20 {
+	width: 20px !important;
+	height: 20px !important;
+}
+
+.rect-22 {
+	width: 22px !important;
+	height: 22px !important;
+}
+
+.rect-24 {
+	width: 24px !important;
+	height: 24px !important;
+}
+
+.rect-24-20 {
+	width: 24px !important;
+	height: 20px !important;
+}
+
+.rect-26 {
+	width: 26px !important;
+	height: 26px !important;
+}
+
+.rect-28-30 {
+	width: 28px !important;
+	height: 30px !important;
+}
+
+.rect-36-14 {
+	width: 36px !important;
+	height: 14px !important;
+}
+
+.rect-38 {
+	width: 38px !important;
+	height: 38px !important;
+}
+
+.rect-40-16 {
+	width: 40px !important;
+	height: 16px !important;
+}
+
+
+/* Shape */
+
+.round,
+.rounded {
+	border-radius: 100px !important;
+}
+
+/* Visibility, reach, etc. */
+
+.visually-hidden {
+	@include visuallyHidden;
+}
+
+
+.shift-up-1 {
+	margin-top: -1px !important;
+}
+
+.shift-up-2 {
+	margin-top: -2px !important;
+}
+
+.shift-up-3 {
+	margin-top: -3px !important;
+}
+
+.shift-down-1 {
+	margin-top: 1px !important;
+}
+
+.shift-down-2 {
+	margin-top: 2px !important;
+}
+
+.shift-down-3 {
+	margin-top: 3px !important;
+}
+
+
+/* Cursor */
+
+.cursor-default {
+	cursor: default;
+}

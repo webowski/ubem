@@ -1,0 +1,144 @@
+/* Text
+=========================== */
+$fontSans:                  'Roboto', sans-serif;
+$fontSerif:                 'Times New Roman', Georgia, serif;
+$fontMono:                  'Ubuntu Mono', monospace;
+$fontMain:                  $fontSans;
+$fontSize:                  14px;
+$fontSize--sm:              12px;
+$lineHeight:                1.25;
+$fontWeight:                400;
+
+
+/* Colors
+=========================== */
+$white:                     #ffffff;
+$black:                     #000000;
+$blue:                      #166eb7;
+$blueDark:                  #014266;
+$red:                       #014266;
+/* $blueLight:                #308de2; */
+$green:                     #019126;
+/* $greenLight:               #2cd3b8;
+$gray:                      #7f7c7a;
+$grayLight:                 #d9d9d9; */
+
+$brand:                     $blue;
+$success:                   $green;
+$danger:                    $red;
+/* $brandLight:                $blueLight;
+$accent:                    #000; */
+$major:                     #333;
+$minor:                     #666;
+$muted:                     #999;
+/* $disabled:                  #a1a1a1;
+$bg:                        #e5e5e5; */
+
+
+/* Shapes
+=========================== */
+/* $border-radius:                     4px; */
+
+
+/* Breakpoints
+=========================== */
+$xs:    0;       /* Extra small devices (portrait phones, less than 576px) */
+$sm:    576px;   /* Small devices (landscape phones, less than 768px) */
+$md:    768px;   /* Medium devices (tablets, less than 992px) */
+$lg:    992px;   /* Large devices (desktops, less than 1200px) */
+$xl:    1200px;  /* Extra large devices (large desktops) */
+
+
+/* Grid
+=========================== */
+$gridColumns:                   24;
+$gridGutter:                    30px;
+$gridGutter--xs:                12px;
+$gridGutter--sm:                20px;
+$gridGutter--md:                $gridGutter;
+$gridGutter--lg:                48px;
+$gridGutter--xl:                60px;
+
+/* $container-max-widths: (
+	sm:     540px,
+	md:     750px,
+	lg:     960px,
+	xl:     1170px
+); */
+
+
+/*  Spacing
+=========================== */
+/* $spacer: 10px;
+
+$spacers: (
+	0: 0,
+	1: ($spacer * .5),
+	2: ($spacer * 1),
+	3: ($spacer * 2),
+	4: ($spacer * 4),
+	5: ($spacer * 7),
+); */
+
+
+/* Custom properties
+=========================== */
+:root {
+	/* Text
+	=========================== */
+	$fontMain:              'Roboto', sans-serif;
+	
+	--fontSize:             $fontSize;
+	--lineHeight:           $lineHeight;
+	/* --fontSize--sm:         $fontSize--sm; */
+/* 
+	@media (min-width: $sm) {
+		--fontSize:             calc($fontSize - 1);
+		--lineHeight:           calc($lineHeight - 1);
+	}
+	
+	@media (min-width: $md) {
+		--fontSize:             $fontSize;
+		--lineHeight:           $lineHeight;
+	} */
+	
+
+	/* Color
+	=========================== */
+	--brand:                $blue;
+	--success:              $green;
+	--danger:               $red;
+
+
+	/* Dimensions
+	=========================== */
+	--sidePadding:          16px;
+	--containerMax:         1160px;
+/* 	--space--xs:            5px;
+	--space--sm:            10px;
+	--space:                15px;
+	--space--lg:            20px;
+	--space--xl:            30px; */
+
+	@media (min-width: $sm) {
+		--sidePadding:          20px;
+	}
+
+	@media (min-width: $md) {
+		--sidePadding:          30px;
+	}
+
+
+	/* Shape
+	=========================== */
+	--borderRadius:         3px;
+	/* --borderRadius--lg:     6px; */
+
+
+	/* Shadow
+	=========================== */
+
+
+	/* Gradient
+	=========================== */
+}

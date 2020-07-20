@@ -1,0 +1,251 @@
+$spaces: 0, 5, 10, 15, 20, 25, 30, 40, 50;
+
+/* Отступы
+=================== */
+@each $spaceValue in $spaces {
+	.mt-#{$spaceValue} { margin-top: #{$spaceValue}px !important; }
+}
+
+@each $spaceValue in $spaces {
+	.mr-#{$spaceValue} { margin-right: #{$spaceValue}px !important; }
+}
+
+@each $spaceValue in $spaces {
+	.mb-#{$spaceValue} { margin-bottom: #{$spaceValue}px !important; }
+}
+
+@each $spaceValue in $spaces {
+	.ml-#{$spaceValue} { margin-left: #{$spaceValue}px !important; }
+}
+
+@each $spaceValue in $spaces {
+	.m-#{$spaceValue} { margin: #{$spaceValue}px !important; }
+}
+
+@each $spaceValue in $spaces {
+	.my-#{$spaceValue} {
+		margin-top: #{$spaceValue}px !important;
+		margin-bottom: #{$spaceValue}px !important;
+	}
+}
+
+@each $spaceValue in $spaces {
+	.mx-#{$spaceValue} {
+		margin-left: #{$spaceValue}px !important;
+		margin-right: #{$spaceValue}px !important;
+	}
+}
+
+.m-auto,
+.mx-auto { 
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.m-auto,
+.my-auto {
+	margin-top: auto !important;
+	margin-bottom: auto !important;
+}
+.mt-auto { margin-top: auto !important; }
+.mr-auto { margin-right: auto !important; }
+.mb-auto { margin-bottom: auto !important; }
+.ml-auto { margin-left: auto !important; }
+
+/* Поля
+================= */
+
+@each $spaceValue in $spaces {
+	.pt-#{$spaceValue} { padding-top: #{$spaceValue}px !important; }
+}
+
+@each $spaceValue in $spaces {
+	.pr-#{$spaceValue} { padding-right: #{$spaceValue}px !important; }
+}
+
+@each $spaceValue in $spaces {
+	.pb-#{$spaceValue} { padding-bottom: #{$spaceValue}px !important; }
+}
+
+@each $spaceValue in $spaces {
+	.pl-#{$spaceValue} { padding-left: #{$spaceValue}px !important; }
+}
+
+@each $spaceValue in $spaces {
+	.p-#{$spaceValue} { padding: #{$spaceValue}px !important; }
+}
+
+.p-auto,
+.px-auto { 
+	padding-left: auto !important;
+	padding-right: auto !important;
+}
+.p-auto,
+.py-auto {
+	padding-top: auto !important;
+	padding-bottom: auto !important;
+}
+.pt-auto { padding-top: auto !important; }
+.pr-auto { padding-right: auto !important; }
+.pb-auto { padding-bottom: auto !important; }
+.pl-auto { padding-left: auto !important; }
+
+@each $spaceValue in $spaces {
+	.py-#{$spaceValue} {
+		padding-top: #{$spaceValue}px !important;
+		padding-bottom: #{$spaceValue}px !important;
+	}
+}
+
+@each $spaceValue in $spaces {
+	.px-#{$spaceValue} {
+		padding-left: #{$spaceValue}px !important;
+		padding-right: #{$spaceValue}px !important;
+	}
+}
+
+@include mediaUp(sm) {
+
+	/* Отступы
+	=================== */
+
+	@each $spaceValue in $spaces {
+		.mt-sm-#{$spaceValue} { margin-top: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.mr-sm-#{$spaceValue} { margin-right: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.mb-sm-#{$spaceValue} { margin-bottom: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.ml-sm-#{$spaceValue} { margin-left: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.m-sm-#{$spaceValue} { margin: #{$spaceValue}px !important; }
+	}
+
+	/* Поля
+	================= */
+
+	@each $spaceValue in $spaces {
+		.pt-sm-#{$spaceValue} { padding-top: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.pr-sm-#{$spaceValue} { padding-right: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.pb-sm-#{$spaceValue} { padding-bottom: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.pl-sm-#{$spaceValue} { padding-left: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.p-sm-#{$spaceValue} { padding: #{$spaceValue}px !important; }
+	}
+}
+
+@include mediaUp(md) {
+
+	/* Отступы
+	=================== */
+
+	@each $spaceValue in $spaces {
+		.mt-md-#{$spaceValue} { margin-top: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.mr-md-#{$spaceValue} { margin-right: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.mb-md-#{$spaceValue} { margin-bottom: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.ml-md-#{$spaceValue} { margin-left: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.m-md-#{$spaceValue} { margin: #{$spaceValue}px !important; }
+	}
+
+	/* Поля
+	================= */
+
+	@each $spaceValue in $spaces {
+		.pt-md-#{$spaceValue} { padding-top: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.pr-md-#{$spaceValue} { padding-right: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.pb-md-#{$spaceValue} { padding-bottom: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.pl-md-#{$spaceValue} { padding-left: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.p-md-#{$spaceValue} { padding: #{$spaceValue}px !important; }
+	}
+}
+
+@include mediaUp(lg) {
+	
+	/* Отступы
+	=================== */
+
+	@each $spaceValue in $spaces {
+		.mt-lg-#{$spaceValue} { margin-top: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.mr-lg-#{$spaceValue} { margin-right: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.mb-lg-#{$spaceValue} { margin-bottom: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.ml-lg-#{$spaceValue} { margin-left: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.m-lg-#{$spaceValue} { margin: #{$spaceValue}px !important; }
+	}
+
+	/* Поля
+	================= */
+
+	@each $spaceValue in $spaces {
+		.pt-lg-#{$spaceValue} { padding-top: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.pr-lg-#{$spaceValue} { padding-right: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.pb-lg-#{$spaceValue} { padding-bottom: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.pl-lg-#{$spaceValue} { padding-left: #{$spaceValue}px !important; }
+	}
+
+	@each $spaceValue in $spaces {
+		.p-lg-#{$spaceValue} { padding: #{$spaceValue}px !important; }
+	}
+}

@@ -1,0 +1,298 @@
+// Выравнивание
+// ---------------------
+
+.text-left {
+	text-align: left !important;
+}
+
+.text-right {
+	text-align: right !important;
+}
+
+.text-center {
+	text-align: center !important;
+}
+
+.text-baseline {
+	vertical-align: baseline !important;
+}
+
+.text-middle {
+	vertical-align: middle !important;
+}
+
+.text-top {
+	vertical-align: top !important;
+}
+
+.text-bottom {
+	vertical-align: bottom !important;
+}
+
+@include mediaUp(md) {
+	.text-md-left {
+		text-align: left !important;
+	}
+
+	.text-md-right {
+		text-align: right !important;
+	}
+
+	.text-md-center {
+		text-align: center !important;
+	}
+}
+
+
+// Шрифт
+// ---------------------
+
+.font-sans {
+	font-family: $fontSans !important;
+}
+
+.font-serif {
+	font-family: $fontSerif !important;
+}
+
+.font-mono {
+	font-family: $fontMono !important;
+}
+
+
+// Жирность
+// ---------------------
+
+.fw-normal {
+	font-weight: 400 !important;
+}
+
+.fw-medium {
+	font-weight: 500 !important;
+}
+
+.fw-bold {
+	font-weight: bold !important;
+}
+
+
+// Заглавнос
+// ---------------------
+
+.text-uppercase {
+	text-transform: uppercase !important;
+	letter-spacing: .05em !important;
+}
+
+.text-lowercase {
+	text-transform: lowercase !important;
+}
+
+.text-capitalize {
+	text-transform: capitalize !important;
+}
+
+
+// Размер шрифта
+// ---------------------
+
+.fz-inherit {
+	font-size: inherit !important;
+}
+
+.fz-10 {
+	font-size: 10px !important;
+}
+
+.fz-12 {
+	font-size: 12px !important;
+}
+
+.fz-14 {
+	font-size: 14px !important;
+}
+
+.fz-15 {
+	font-size: 15px !important;
+}
+
+.fz-16 {
+	font-size: 16px !important;
+}
+
+.fz-18 {
+	font-size: 18px !important;
+}
+
+.fz-20 {
+	font-size: 20px !important;
+}
+
+.fz-22 {
+	font-size: 22px !important;
+}
+
+.fz-24 {
+	font-size: 24px !important;
+}
+
+.fz-26 {
+	font-size: 26px !important;
+}
+
+.fz-28 {
+	font-size: 28px !important;
+}
+
+// Responsive font sizes
+// ---------------------
+.fz-xs {
+	font-size: 10px !important;
+
+	@include mediaUp(md) {
+		font-size: 12px !important;
+	}
+}
+
+.fz-sm {
+	font-size: 12px !important;
+
+	@include mediaUp(md) {
+		font-size: 14px !important;
+	}
+}
+
+.fz-md {
+	font-size: 14px !important;
+
+	@include mediaUp(md) {
+		font-size: 16px !important;
+	}
+}
+
+.fz-lg {
+	font-size: 16px !important;
+
+	@include mediaUp(md) {
+		font-size: 18px !important;
+	}
+}
+
+.fz-xl {
+	font-size: 20px !important;
+
+	@include mediaUp(md) {
+		font-size: 23px !important;
+	}
+}
+
+.fz-xxl {
+	font-size: 22px !important;
+
+	@include mediaUp(md) {
+		font-size: 24px !important;
+	}
+}
+
+.fz-xxxl {
+	font-size: 26px !important;
+
+	@include mediaUp(md) {
+		font-size: 28px !important;
+	}
+}
+
+
+// Высота строки
+// ---------------------
+
+.lh-inherit { line-height: inherit !important }
+
+.lh-100 { line-height: 1.00 !important; }
+
+.lh-105 { line-height: 1.05 !important; }
+
+.lh-xs,
+.lh-110 { line-height: 1.10 !important; }
+
+.lh-115 { line-height: 1.15 !important; }
+
+.lh-120 { line-height: 1.20 !important; }
+
+.lh-sm,
+.lh-125 { line-height: 1.25 !important; }
+
+.lh-130 { line-height: 1.30 !important; }
+
+.lh-md,
+.lh-135 { line-height: 1.35 !important; }
+
+.lh-140 { line-height: 1.40 !important; }
+
+.lh-145 { line-height: 1.45 !important; }
+
+.lh-lg,
+.lh-150 { line-height: 1.50 !important; }
+
+
+/* Ссылка
+=========== */
+
+.link-pseudo {
+	text-decoration: none;
+	border-bottom: 1px dotted currentColor;
+}
+
+.link-pseudo:hover {
+	border-bottom-color: transparent;
+}
+
+.link-as-text {
+	border-bottom-color: transparent;
+	text-decoration: none;
+	color: inherit;
+}
+
+.link-as-text:hover {
+	color: $voice;
+}
+
+.text-as-link {
+	color: inherit;
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	transition:
+		color $duration--sm,
+		border-color $duration--sm,
+		background-color $duration--sm;
+}
+
+.text-as-link:hover {
+	border-bottom-color: currentColor;
+}
+
+.link-simple {
+	border-bottom: 1px solid currentColor;
+	transition:
+		color $duration--sm,
+		border-color $duration--sm,
+		background-color $duration--sm;
+}
+
+.link-simple:hover,
+.text-as-link:hover {
+	border-bottom-color: transparent;
+}
+
+
+// Word wrap
+// -----------------
+.nowrap {
+	white-space: nowrap;
+}
+
+.text-ellipsis {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}

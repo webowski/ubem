@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Руководство по разработке</title>
+
+	<link rel="stylesheet" href="./styles/min/common.css">
+	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/atom-one-dark.min.css"> -->
+	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/railscasts.min.css"> -->
+	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/monokai-sublime.min.css"> -->
+	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/vs.min.css"> -->
+	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/dracula.min.css"> -->
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/agate.min.css">
+
+	<style>
+		pre {
+			padding: 0;
+			background-color: transparent;
+		}
+
+		pre code {
+			background-color: transparent;
+			padding: 20px !important;
+			border-radius: 3px;
+		}
+	</style>
+</head>
+<body>
+	<div class="Wrap">
+
+		<!-- <div class="Sidepanel">
+
+			<ul>
+				<li><a href="#naming">Именование классов</a></li>
+			</ul>
+
+		</div> -->
+		<div class="Main">
+
+			<div class="Section">
+				<div class="Container">
+
+					<h1>Руководство по разработке</h1>
+
+				</div>
+			</div>
+
+			<div class="Section">
+				<div class="Container">
+
+					<div class="Box">
+
+						<h3>Именование CSS классов</h3>
+						<pre><code class="html">&lt;div class="SomeBlock SomeBlock--modifier do-scriptMagic is-stateModifier"&gt;
+	&lt;div class="SomeBlock__innerBlock"&gt;
+		&lt;div class="row gutter-xs"&gt;
+			&lt;div class="col-18"&gt;
+
+			&lt;/div&gt;
+			&lt;div class="col-6"&gt;
+
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+						<!-- <pre><code>&lt;div class="SomeBlock -modifier is-stateModifier"&gt;
+	&lt;div class="SomeBlock__innerBlock"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre> -->
+						<ul class="list">
+							<li><code>.SomeBlock</code> - блок (TitleCase)</li>
+							<li><code>.SomeBlock__innerBlock</code> — элемент</li>
+							<li>Модификаторы:
+								<ul>
+									<li><code>.SomeBlock--modifier</code> — модификатор (camelCase)</li>
+									<li><code>.is-*</code> — состояние блока (<code>is-selected</code>)</li>
+									<li><code>.has-*</code> — наличие потомка, или состояние (<code>has-focus</code> например)</li>
+								</ul>
+							</li>
+							<li><code>.do-*</code> — префикс классов для навешивания скриптов</li>
+							<!-- <li><code>.*-set</code> — обёртка для повторяющихся блоков</li> -->
+							<!-- <li><code>.*-card</code> — повторяющийся блок (комментарий, статья)</li> -->
+							<li>Сетка <code>.row</code>, <code>.col-*</code>, <code>.grid</code>, <code>.gutter-*</code></li>
+							<li>Утилиты
+								<ul class="list">
+									<li>Кастомные <code>.u-whatItDoes</code> (<code>.u-expandLinkArea</code>)</li>
+									<li>Атомарные
+										<ul class="list">
+											<li>блочные: <code>.d-*</code>, <code>.justify-*</code>, <code>.align-*</code></li>
+											<!-- <li><code>.border-*</code> </li> -->
+											<li>поля и отступы <code>.p-*</code> <code>.mx-*</code></li>
+											<!-- <li><code>.shadow-*</code> </li> -->
+											<li>текстовые: <code>.text-*</code>, <code>.font-*</code>, <code>.color-*</code>, <code>.list-*</code> (<code>.font-size-sm</code>)</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>Классы глобального контекста <code>.g-*</code> (<code>.g-mobile</code>, <code>.g-logged</code>, <code>.g-loggedUrist</code>)</li>
+						</ul>
+
+						<hr class="hr">
+
+						<h3 class="color-danger">Нельзя</h3>
+
+						<h5>Скрещивать блоки</h5>
+						<p><code class="html">&lt;div class="SomeBlock AnotherBlock"&gt;&lt;/div&gt;</code></p>
+						<hr class="hr">
+
+						<h3>Сборка (gulp)</h3>
+						<ul>
+							<li><code>styles</code></li>
+							<li><code>watch</code></li>
+							<li><code>browsersync</code></li>
+							<li><code>default (gulp)</code> — minifyjs, minifycss</li>
+							<li><code>dev</code> — styles + watch + browsersync</li>
+							<li><code>settings.json</code></li>
+						</ul>
+
+						<hr class="hr">
+
+						<h3>Добавление значка</h3>
+						<ul>
+							<li>положить svg файл в папку <code>images/vector-icons</code></li>
+							<li>запустить <code>gulp icons</code></li>
+							<li>скопировать из <code>images/sprite.symbol.html</code> код для вставки</li>
+						</ul>
+
+						<hr class="hr">
+
+						<h3>Добавление стиля</h3>
+						<h6>В качестве файла <code>.css</code></h6>
+
+						<pre><code class="html">&lt;!-- отложенная загрузка --&gt;
+&lt;link rel="stylesheet" href="path/to.css" media="nope!" onload="this.media='all'"&gt;</code></pre>
+
+
+						<h6>В качестве файла <code>.scss</code></h6>
+
+						<pre><code class="scss">// общие стили для всех страниц в main.scss
+
+// scss-стили для отдельных интерфейсов</code></pre>
+
+
+						<hr class="hr">
+
+						<h3>Добавление скрипта</h3>
+
+						<h6>В качестве модуля</h6>
+
+						<pre><code class="javascript">// в gulpfile.js
+
+// в scripts/app.js
+</code></pre>
+
+
+						<h6>В качестве файла <code>.js</code></h6>
+
+						<pre><code>&lt;!-- отложенная загрузка --&gt;
+&lt;script defer="defer" src="path/to.js"&gt;&lt;/script&gt;</code></pre>
+
+					</div>
+
+				</div>
+			</div>
+
+			<div class="Section">
+				<div class="Container">
+
+					<h3>Сетка</h3>
+
+					<!-- <div class="grid">
+						<div class="row">
+							<div class="col-4">
+
+								<code>col-4</code>
+
+							</div>
+							<div class="col-4">
+
+								<code>col-4</code>
+
+							</div>
+							<div class="col-4">
+
+								<code>col-4</code>
+
+							</div>
+							<div class="col-4">
+
+								<code>col-4</code>
+
+							</div>
+							<div class="col-4">
+
+								<code>col-4</code>
+
+							</div>
+							<div class="col-4">
+
+								<code>col-4</code>
+
+							</div>
+						</div>
+					</div> -->
+
+					<h3>.Box</h3>
+
+					<!-- <div class="Box Box--sm"><code>Box Box--sm</code></div>
+
+					<div class="Box">Box</div>
+					<div class="Box Box--border">Box Box--border</div>
+
+					<div class="Box Box--lg">Box Box--lg</div> -->
+
+				</div>
+			</div>
+
+			<!-- <div class="Section">
+				<div class="Container">
+
+					<button class="Btn">Btn</button>
+					<button class="Btn Btn--blue">Btn Btn--blue</button>
+
+				</div>
+			</div> -->
+
+			<hr class="hr">
+
+			<div class="Section Section--bgg">
+				<div class="Container">
+
+					<h2>Замена jQuery на Native JS</h2>
+
+					<h4>Выбор элементов</h4>
+
+					<div class="row gutter-sm">
+						<div class="col-24 col-lg-12">
+
+							<h6 class="color-muted mb-5">jQuery</h6>
+
+<pre>
+<code class="javascript">$('.element')
+
+
+// в контексте .container
+var $container = $('.container');
+$('.element', $container)</code></pre>
+
+						</div>
+						<div class="col-24 col-lg-12">
+
+							<h6 class="color-muted mb-5">JS</h6>
+
+<pre>
+<code class="javascript">document.querySelector('.element') // один элемент
+document.querySelectorAll('.element') // все элементы
+
+// в контексте .container
+var container = document.querySelector('.container')
+container.querySelectorAll('.element')
+</code></pre>
+
+						</div>
+					</div>
+
+
+
+					<h4>Добавление/удаление классов</h4>
+
+					<div class="row gutter-sm">
+						<div class="col-24 col-lg-12">
+
+							<h6 class="color-muted mb-5">jQuery</h6>
+
+<pre>
+<code class="javascript">$(element).addClass(className);
+$(element).removeClass(className);</code></pre>
+
+						</div>
+						<div class="col-24 col-lg-12">
+
+							<h6 class="color-muted mb-5">JS</h6>
+
+<pre>
+<code class="javascript">element.classList.add(className);
+element.classList.remove(className);</code></pre>
+
+						</div>
+					</div>
+
+
+
+					<h4>Цикл</h4>
+
+					<div class="row gutter-sm">
+						<div class="col-24 col-lg-12">
+
+							<h6 class="color-muted mb-5">jQuery</h6>
+
+<pre>
+<code class="javascript">// each
+$(selector).each(function(i, el) {
+
+});</code></pre>
+
+						</div>
+						<div class="col-24 col-lg-12">
+
+							<h6 class="color-muted mb-5">JS</h6>
+
+<pre>
+<code class="javascript">// forEach
+var elements = document.querySelectorAll(selector);
+Array.prototype.forEach.call(elements, function(el, i) {
+
+});</code></pre>
+
+						</div>
+					</div>
+
+
+					<h4>Готовность документа</h4>
+
+					<div class="row gutter-sm">
+						<div class="col-24 col-lg-12">
+
+							<h6 class="color-muted mb-5">jQuery</h6>
+
+<pre><code class="javascript">$(document).ready(function() {
+
+});</code></pre>
+
+						</div>
+						<div class="col-24 col-lg-12">
+
+							<h6 class="color-muted mb-5">JS</h6>
+
+<pre><code class="javascript">document.addEventListener('DOMContentLoaded', function() {
+
+});</code></pre>
+
+						</div>
+					</div>
+
+
+					<h4>Анимация slide</h4>
+
+					<div class="row gutter-sm">
+						<div class="col-24 col-lg-12">
+
+							<h6 class="color-muted mb-5">jQuery</h6>
+
+<pre><code class="javascript">$(element).slideDown(200, function() {
+	// callback
+});
+</code></pre>
+
+						</div>
+						<div class="col-24 col-lg-12">
+
+							<h6 class="color-muted mb-5">JS</h6>
+
+<pre><code class="javascript">// с помощью scripts/helpers/Slide.js
+slideDown(element, 200, function() {
+	// callback
+});</code></pre>
+
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="Footer">
+			<div class="Footer__top">
+				<div class="container">
+
+
+
+				</div>
+			</div>
+			<div class="Footer__bottom">
+				<div class="container">
+
+
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+<script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', (event) => {
+		document.querySelectorAll('pre code').forEach((block) => {
+			hljs.highlightBlock(block);
+		});
+	});
+</script>
+
+</body>
+</html>

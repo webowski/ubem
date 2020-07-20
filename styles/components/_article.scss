@@ -1,0 +1,247 @@
+.ArticleContent p:first-child {
+	max-width: none;
+}
+
+.ArticleContent p:first-child img {
+	width: 100%;
+}
+
+.ArticleContent p {
+	margin-top: 0;
+	margin-bottom: 0;
+	min-height: .6em;
+}
+
+.ArticleShort + .ArticleShort {
+	margin-top: 20px;
+}
+
+.ArticleShort h5 {
+	font-size: 16px;
+	line-height: 1.25;
+	font-weight: 500;
+	margin-bottom: 4px;
+}
+
+.ArticleShort a {
+	border-bottom-color: transparent;
+}
+
+.ArticleShort a:hover {
+	border-bottom-color: currentColor;
+}
+
+.ArticleShort__meta {
+	color: $muted;
+	font-size: 12px;
+	line-height: 1;
+	font-weight: 500;
+}
+
+
+.ArticleFancy {
+	position: relative;
+	height: 295px;
+}
+
+.ArticleFancy__link {
+	@include linkReset;
+	display: block;
+	height: 100%;
+}
+
+.ArticleFancy__link:before {
+	@include pseudoBlock(100%, 100%);
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.6);
+	transition: background-color .2s;
+}
+
+.ArticleFancy__image {
+	object-fit: cover;
+	height: 100%;
+}
+
+.ArticleFancy .Badge {
+	position: absolute;
+	z-index: 1;
+	top: 30px;
+	left: 30px;
+}
+
+.ArticleFancy h5 {
+	position: absolute;
+	bottom: 28px;
+	left: 30px;
+	right: 30px;
+	z-index: 1;
+	color: $white;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.ArticleFancy:hover .ArticleFancy__link:before {
+	background-color: rgba(202,158,40,.8);
+}
+
+
+.ArticleCard {
+	position: relative;
+	cursor: default;
+}
+
+.ArticleCard__link {
+	@include linkReset;
+	display: block;
+	position: relative;
+}
+
+.ArticleCard__link:before {
+	@include pseudoBlock(100%, 100%);
+	top: 0;
+	bottom: 0;
+	background-image: linear-gradient(to top, $intense 0%, transparent 100%);
+	opacity: .6;
+}
+
+.ArticleCard__link:hover .text-as-link {
+	border-bottom-color: currentColor;
+}
+
+.ArticleCard__image {
+	display: block;
+}
+
+.ArticleCard__header {
+	position: absolute;
+	bottom: 18px;
+	left: 20px;
+	right: 20px;
+}
+
+.ArticleCard h5 {
+	color: $white;
+	font-size: 20px;
+	line-height: 1.2;
+}
+
+.ArticleCard__rating {
+	display: flex;
+	color: $muted;
+	font-size: 12px;
+	line-height: 1;
+	align-items: center;
+}
+
+.ArticleCard__body {
+	padding-top: 1rem;
+	font-size: 14px;
+}
+
+.SpeechMark {
+	height: 20px;
+	border: 0 solid var(--border);
+	border-top: 1px solid var(--border);
+	position: relative;
+}
+
+.SpeechMark:before,
+.SpeechMark:after {
+	@include pseudoBlock(14px, 12px);
+	left: 24px;
+	top: 0px;
+	transform: skewY(-40deg);
+}
+
+.SpeechMark:before {
+	top: -6px;
+	border: 0 solid var(--border);
+	border-left-width: 1px;
+	border-bottom-width: 1px;
+}
+
+.SpeechMark:after {
+	top: -8px;
+	left: 25px;
+	background-color: var(--bg);
+}
+
+.SpeechMark--up {
+	border-width: 0 0 1px;
+}
+
+.SpeechMark--up:before,
+.SpeechMark--up:after {
+	@include pseudoBlock(16px, 16px);
+	transform: skewY(48deg);
+}
+
+.SpeechMark--up:before {
+	top: 11px;
+	left: 33px;
+	border-width: 1px 0 0 1px;
+}
+
+.SpeechMark--up:after {
+	top: 13px;
+	left: 34px;
+	background-color: var(--bg);
+}
+
+.SpeechMark--sm:before {
+	left: 19px;
+}
+
+.SpeechMark--sm:after {
+	left: 20px;
+}
+
+
+.ArticleStatSet {
+	display: flex;
+	cursor: default;
+}
+
+.ArticleStat + .ArticleStat {
+	margin-left: 10px;
+}
+
+.ArticleStat {
+	font-size: 14px;
+	line-height: 1.2;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	fill: $disabled;
+}
+
+.ArticleStat .Icon {
+	margin-top: -2px;
+	margin-right: 5px;
+	width: 20px;
+	height: 20px;
+}
+
+.ArticleStat--sm {
+	font-size: 12px;
+}
+
+.ArticleIndex {
+	margin-top: 24px;
+	margin-bottom: 24px;
+	@include marginFirstLast;
+	font-weight: 500;
+
+	@include mediaUp(md) {
+		margin-top: 32px;
+		margin-bottom: 32px;
+	}
+}
+
+.ArticleIndex__heading {
+	color: $muted;
+	font-size: 14px;
+	line-height: 1.2;
+	font-weight: bold;
+}

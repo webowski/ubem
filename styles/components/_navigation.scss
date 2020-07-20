@@ -1,0 +1,423 @@
+.MainMenu {
+	display: none;
+
+	@include mediaUp(md) {
+		display: block;
+		margin-left: auto;
+	}
+}
+
+.MainMenu__list {
+	@include listReset(true);
+	display: flex;
+}
+
+.MainMenu__item {
+	z-index: 76;
+	border-bottom: 1px solid var(--border);
+
+	@include mediaUp(md) {
+		border-bottom-width: 0;
+	}
+}
+
+.g-desktop .MainMenu__item:hover {
+	filter: drop-shadow(0 0 10px rgba(0,0,0,.2));
+	/* transition: filter $duration--lg; */
+}
+
+.MainMenu__submenu {
+	min-width: 233px;
+	padding: 0px 23px 16px;
+	position: absolute;
+	z-index: 76;
+	background-color: var(--bg);
+	opacity: 0;
+	visibility: hidden;
+/* 	transition:
+		opacity $duration--lg,
+		visibility 0s linear $duration--lg; */
+
+	@include mediaUp(md) {
+		padding: 8px 20px 20px;
+	}
+}
+
+.g-desktop .MainMenu__item:hover .MainMenu__submenu {
+	visibility: visible;
+	opacity: 1;
+	/* transition: opacity $duration--lg; */
+}
+
+.MainMenu__item:hover .MainMenu__itemLink .Icon {
+
+	@include mediaUp(md) {
+		transform: rotate(180deg);
+	}
+}
+
+.MainMenu__submenu ul {
+	@include listReset(true);
+}
+
+.MainMenu__submenu--wide {
+	position: static;
+	filter: none !important;
+}
+
+.MainMenu__submenu--wide .MainMenu__itemLink {
+	z-index: 77;
+}
+
+.MainMenu__submenu--wide .MainMenu__submenu {
+	padding-top: 20px;
+	left: 0;
+	right: 0;
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+.MainMenu__submenu--wide .MainMenu__submenu ul {
+	column-count: 4;
+	column-gap: 40px;
+}
+
+.MainMenu__submenu--wide .MainMenu__submenu li {
+	break-inside: avoid;
+}
+
+.MainMenu__itemLink {
+	@include linkReset;
+	display: block;
+	position: relative;
+	padding: 16px 40px 14px 23px;
+	position: relative;
+	color: var(--intense);
+	font-size: 13.9px;
+	line-height: 110%;
+	font-weight: 500;
+	text-transform: uppercase;
+	transition: none;
+	/* transition:
+		background-color $duration--lg; */
+
+	@include mediaUp(md) {
+		padding: 19px 18px 11px 14px;
+	}
+}
+
+.MainMenu__itemLink:hover {
+
+	@include mediaUp(md) {
+		color: var(--brand);
+	}
+}
+
+.g-desktop .MainMenu__item:hover .MainMenu__itemLink {
+	background-color: var(--bg);
+}
+
+.MainMenu__itemLink .Icon {
+	width: 10px;
+	position: absolute;
+	right: 23px;
+	top: 12px;
+	fill: currentColor;
+	transition:
+		transform $duration--sm;
+
+	@include mediaUp(md) {
+		width: 7px;
+		right: 7px;
+		top: 14px;
+	}
+}
+
+.MainMenu__itemCount {
+	color: var(--muted);
+	font-size: 10px;
+	font-weight: 500;
+	display: inline;
+
+	@include mediaUp(md) {
+		display: block;
+	}
+}
+
+.MainMenu--mobile {
+	display: block;
+
+	@include mediaUp(md) {
+		display: none;
+	}
+}
+
+.MainMenu--mobile .MainMenu__list {
+	display: block;
+}
+
+.MainMenu--mobile .MainMenu__submenu {
+	position: static;
+	display: none;
+	visibility: visible;
+	opacity: 1;
+}
+
+.MainMenu__item.is-open .MainMenu__itemLink {
+	color: var(--brand);
+}
+
+.MainMenu__item.is-open .MainMenu__itemLink .Icon {
+	transform: rotate(180deg);
+}
+
+.MainMenu--mobile .MainMenu__submenu.is-open {
+	display: block;
+}
+
+.NavActual {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-top: 1px solid var(--border);
+	font-size: 13.9px;
+	line-height: 1.25;
+	font-weight: 500;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.NavActual ul {
+	@include listReset(true);
+	display: flex;
+}
+
+.NavActual ul li + li {
+	margin-left: 34px;
+}
+
+.NavActual a {
+	border-bottom-color: transparent;
+}
+
+.NavActual a:hover {
+	border-bottom-color: currentColor;
+}
+
+
+.NavSecondary {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	@include marginFirstLast;
+	padding-top: 15px;
+	padding-bottom: 13px;
+	border-top: 1px solid var(--border);
+	border-bottom: 1px solid var(--border);
+	font-size: 14px;
+	line-height: 1.2;
+	font-weight: 500;
+}
+
+.NavSecondary ul {
+	display: flex;
+}
+
+.NavSecondary li {
+	padding-left: 20px;
+	padding-right: 20px;
+	position: relative;
+	flex: 1 1 auto;
+	text-align: center;
+
+	@include mediaUp(md) {
+		padding-left: 38px;
+		padding-right: 38px;
+	}
+}
+
+.NavSecondary ul li + li {
+	margin-left: 0;
+	margin-top: 0;
+}
+
+.NavSecondary li:before {
+	display: none;
+}
+
+.NavSecondary li:first-child:before,
+.NavSecondary li:after {
+	@include pseudoBlock(1px, 16px);
+	top: 0px;
+	background-color: $border;
+}
+
+.NavSecondary li:first-child:before {
+	left: 0;
+}
+
+.NavSecondary li:after {
+	right: 0;
+}
+
+.NavSecondary a {
+	border-bottom-color: transparent;
+	color: $intense;
+}
+
+.NavSecondary a:hover {
+	border-bottom-color: currentColor;
+	color: $brand;
+}
+
+
+.MainMenu__submenu .MenuItem {
+	margin-left: -23px;
+	margin-right: -23px;
+
+	@include mediaUp(md) {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+}
+
+.MenuItem {
+	@include linkReset;
+	padding: 11px 23px 9px;
+	display: flex;
+	align-items: flex-start;
+	color: var(--intense);
+	font-size: 14px;
+	line-height: 120%;
+	font-weight: 500;
+	transition:
+		color $duration--lg,
+		background-color $duration--lg;
+
+	@include mediaUp(md) {
+		padding: 9px 20px 7px;
+	}
+}
+
+.MenuItem .Icon {
+	width: 14px;
+	height: 14px;
+	margin-right: 10px;
+	flex: 0 0 auto;
+	fill: var(--muted);
+	transition: fill $duration--lg;
+}
+
+.MenuItem__text {
+
+}
+
+.MenuItem__count {
+	color: var(--brand);
+	transition: color $duration--lg;
+}
+
+.MenuItem:hover {
+	background-color: var(--voiceLightest);
+	transition: none;
+}
+
+[data-theme="dark"] .MenuItem:hover {
+	background-color: rgba(210,210,255,.1);
+}
+
+.MenuItem:hover .Icon {
+	fill: var(--brand);
+	transition: none;
+}
+
+.MenuItem:hover .MenuItem__count {
+	transition: none;
+}
+
+.MenuItem--beyond {
+	margin-left: -30px;
+	margin-right: -30px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.MenuItem--danger {
+	color: $danger;
+}
+
+
+.NavMobile {
+	height: 100vh;
+	width: 100vw;
+	max-width: 400px;
+	padding-top: 60px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: $white;
+	position: absolute;
+	right: 0;
+	top: 0;
+	pointer-events: auto;
+	opacity: 0;
+	visibility: hidden;
+	transition:
+		opacity $duration,
+		transform $duration,
+		visibility 0s linear $duration;
+	will-change: opacity, transform;
+	transform: translateY(-20px);
+
+	@include mediaUp(md) {
+		display: none;
+	}
+}
+
+.NavMobile.is-open {
+	visibility: visible;
+	opacity: 1;
+	z-index: 100;
+	transition:
+		opacity $duration,
+		transform $duration;
+	transform: translateY(0);
+}
+
+.NavMobileOpener {
+	@include buttonReset;
+	width: 24px;
+	height: 24px;
+	margin-left: 4px;
+	position: relative;
+	z-index: 75;
+	transition:
+		transform $duration--sm cubic-bezier(0.4,0.0,1,1),
+		z-index $duration step-end;
+
+	@include mediaUp(md) {
+		display: none;
+	}
+}
+
+.NavMobileOpener:after {
+	@include pseudoBlock(100%);
+	left: 0;
+	top: 0;
+	z-index: 2;
+	background-color: red;
+}
+
+.NavMobileOpener .Icon {
+	width: 24px;
+	height: 17px;
+}
+
+.NavMobileOpener.is-open {
+	z-index: 110;
+	transform: rotate(90deg);
+	transition:
+		transform $duration--sm cubic-bezier(0.4,0.0,1,1),
+		z-index $duration step-start;
+}
+
+.NavMobile__section {
+	padding: 20px 23px;
+}

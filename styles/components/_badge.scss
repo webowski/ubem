@@ -1,0 +1,28 @@
+.Badge {
+	@include linkReset;
+	display: inline-block;
+	padding: 5px 12px;
+	border-radius: 24px;
+	border: 1px solid $border;
+	color: $muted;
+	font-size: 12px;
+	line-height: 1;
+	font-weight: 500;
+	white-space: nowrap;
+	transition:
+		background-color $duration--sm,
+		border-color $duration--sm,
+		color $duration--sm,
+		box-shadow $duration--sm,
+		transform $duration--sm;
+}
+
+.Badge:hover {
+	color: $voice;
+	border-color: $voice;
+}
+
+.Badge--white {
+	color: $white;
+	border-color: $white;
+}

@@ -1,0 +1,95 @@
+.SiteFooter {
+	cursor: default;
+}
+
+.SiteFooter__top {
+	padding-top: 24px;
+	padding-bottom: 24px;
+	background-color: #323239;
+	color: $white;
+
+	@include mediaUp(md) {
+		padding-top: 48px;
+		padding-bottom: 40px;
+	}
+}
+
+.SiteFooter__top a {
+	@include linkReset;
+}
+
+.SiteFooter__top a {
+	color: $white;
+}
+
+.SiteFooter__top a:hover {
+	color: $brand;
+}
+
+.SiteFooter__hr {
+	border: 0 none;
+	border-top: 1px solid rgba(255,255,255,.06);
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.FooterNav {
+	font-weight: 500;
+}
+
+.FooterNav ul {
+	@include listReset(true);
+}
+
+.FooterNav ul > li + li {
+	margin-top: 12px;
+}
+
+.SiteFooter__bottom {
+	padding-top: 28px;
+	padding-bottom: 28px;
+	background-color: #2d2d33;
+	color: rgba(255,255,255,.4);
+	font-size: 12px;
+	line-height: 20px;
+}
+
+.SiteFooter__bottom a {
+	color: rgba(255,255,255,.4);
+}
+
+.SiteFooter__bottom a:hover {
+	color: $white;
+	border-bottom-color: $white;
+}
+
+.SiteFooter__storeLink {
+	display: block;
+	width: 42px;
+
+	@include mediaUp(md) {
+		width: 155px;
+	}
+}
+
+.SiteFooter__storeLink img {
+	display: block;
+}
+
+.SiteFooter__logo {
+	width: 88px;
+	display: block;
+
+	@include mediaUp(md) {
+		width: 158px;
+	}
+}
+
+.StatsCounter {
+	@include linkReset;
+	display: block;
+}
+
+.StatsCounter img {
+	display: block;
+}

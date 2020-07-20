@@ -1,0 +1,35 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+svg {
+	display: inline-block;
+}
+
+body {
+	margin: 0;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+input,
+textarea,
+button {
+	font-family: inherit;
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+}
+
+/* Преодоление устаревшего reset (в начале styles_new), 
+который лучше не выпиливать до перевёрстки 
+================================ */

@@ -1,0 +1,373 @@
+.FormInput {
+	border-radius: 4px;
+}
+
+.FormInput,
+input.FormInput {
+	width: 100%;
+	height: auto;
+	padding: 8px 10px;
+	border: 1px solid var(--border);
+	display: block;
+	background-color: var(--mutedLightest);
+	background-repeat: no-repeat;
+	box-shadow: none;
+	transition:
+		background-color $duration linear,
+		border-color $duration linear,
+		color $duration linear;
+	resize: none;
+	color: var(--intense);
+	font-size: 14px;
+	line-height: 1.2;
+	font-family: inherit;
+	font-weight: 400;
+
+	@include placeholder() {
+		color: var(--minor);
+	}
+
+	@include mediaUp(md) {
+		padding: 8px 10px;
+		font-size: 15px;
+		line-height: 1.25;
+	}
+}
+
+.FormInput:focus {
+	background-color: var(--bg);
+	color: var(--intense);
+	box-shadow:
+		0 0 0 1px rgba(0,0,0,.1),
+		0 1px 1px 0 rgba(0,0,0,.05),
+		0 0 0 4px rgba(0,0,0,.1);
+	outline: none;
+}
+
+.FormInput--xl {
+	padding: 13px 18px;
+	font-size: 16px;
+	line-height: 1.25;
+}
+
+textarea.FormInput {
+	height: 120px;
+
+	@include mediaUp(md) {
+		height: 190px;
+	}
+}
+
+.FormInput--file {
+	padding: 0;
+	border: 0 none;
+	display: flex;
+	align-items: center;
+	cursor: default;
+}
+
+.FormInput--file .FormInput__caption {
+	color: $minor;
+	font-size: 15px;
+	margin-right: 7px;
+	white-space: nowrap;
+}
+
+.FormInput--file .FormInput__message{
+	color: $minor;
+	font-size: 15px;
+	margin-left: 7px;
+	flex-grow: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.FormInput--file label {
+}
+
+.FormInput--file input[type=file] {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+
+.FormLabel {
+	// color: $minor;
+	// font-size: 15px;
+	// line-height: 18px;
+	// font-weight: normal;
+	transition:
+		color $duration--sm linear,
+		transform $duration--sm linear;
+
+	// @include mediaUp(md) {
+	// 	font-size: 15px;
+	// 	line-height: 18px;
+	// }
+}
+
+
+.FormField {
+	position: relative;
+}
+
+.FormField--complex {
+
+	.FormLabel {
+		white-space: nowrap;
+		position: absolute;
+		left: 11px;
+		top: 16px;
+		right: 10px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		transform-origin: 2px 0;
+		pointer-events: none;
+		will-change: transform;
+	}
+
+	.FormInput {
+		margin-top: 0;
+		padding-top: 22px;
+		padding-bottom: 4px;
+	}
+
+	.icon-x {
+		display: none;
+		position: absolute;
+		fill: $danger;
+		top: calc(50% - 8px);
+		right: 20px;
+	}
+
+	&.has-value {
+
+		.FormInput {
+			background-color: $white;
+			color: $major;
+		}
+	}
+
+	&.is-active {
+
+	}
+
+	&.has-focus,
+	&.has-value {
+		.FormLabel {
+			transform: scale(.745) translateY(-11px);
+			color: $minor;
+		}
+	}
+
+	&.has-error {
+
+		.FormInput {
+			border-color: $danger;
+		}
+
+		.form-text {
+			color: $danger;
+		}
+
+		.icon-x {
+			display: block;
+		}
+	}
+
+	&.has-focus {
+		.FormInput {
+			color: $major;
+		}
+	}
+
+	@include mediaUp(md) {
+
+		.FormLabel {
+			left: 11px;
+			top: 16px;
+		}
+
+		.FormInput {
+			padding-top: 22px;
+			padding-bottom: 4px;
+		}
+
+		&.has-focus,
+		&.has-value {
+			.FormLabel {
+				transform: scale(.865) translateY(-11px);
+				color: $minor;
+			}
+		}
+	}
+
+}
+
+
+.Checkbox {
+	margin-top: 12px;
+	margin-bottom: 12px;
+	display: block;
+	cursor: pointer;
+	position: relative;
+	user-select: none;
+}
+
+.Checkbox input {
+	@include visuallyHidden;
+}
+
+.Checkbox__label {
+	padding-top: 1px;
+	padding-left: 26px;
+	display: block;
+	font-size: 14px;
+	line-height: 130%;
+}
+
+.Checkbox__label:before {
+	@include pseudoBlock(18px, 18px);
+	top: 0;
+	left: 0;
+	background-color: $white;
+	border: 1px solid $brand;
+	border-radius: 2px;
+	transition:
+		background-color $duration--sm;
+}
+
+.Checkbox__tick {
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	fill: $white;
+	top: 3px;
+	left: 3px;
+	z-index: 2;
+	opacity: 0;
+	transform: scale(2);
+	transition:
+		transform $duration--sm,
+		opacity $duration--sm;
+}
+
+.Checkbox input:checked ~ .Checkbox__label:before {
+	background-color: $brand;
+}
+
+.Checkbox input:checked + .Checkbox__tick {
+	opacity: 1;
+	transform: scale(1);
+}
+
+
+.Radio {
+	margin-top: 12px;
+	margin-bottom: 12px;
+	display: block;
+	cursor: pointer;
+	position: relative;
+	user-select: none;
+}
+
+.Radio input {
+	@include visuallyHidden;
+}
+
+.Radio__label {
+	padding-top: 1px;
+	padding-left: 26px;
+	display: block;
+	font-size: 14px;
+	line-height: 130%;
+}
+
+.Radio__label:before {
+	@include pseudoBlock(22px, 22px);
+	top: 0;
+	left: 0;
+	background-color: var(--bg);
+	border: 1px solid var(--brand);
+	border-radius: 12px;
+	transition:
+		background-color $duration--sm;
+}
+
+.Radio__tick {
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	fill: var(--inverse);
+	top: 3px;
+	left: 3px;
+	z-index: 2;
+	opacity: 0;
+	transform: scale(2);
+	transition:
+		transform $duration--sm,
+		opacity $duration--sm;
+}
+
+.Radio input:checked ~ .Radio__label:before {
+	background-color: var(--brand);
+}
+
+.Radio input:checked + .Radio__tick {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.Radio--colorVoice .Radio__label:before {
+	border-color: var(--voice);
+}
+
+.Radio--colorVoice input:checked ~ .Radio__label:before {
+	background-color: var(--voice);
+}
+
+.Radio--colorSuccess .Radio__label:before {
+	border-color: var(--success);
+}
+
+.Radio--colorSuccess input:checked ~ .Radio__label:before {
+	background-color: var(--success);
+}
+
+.Radio--voting {
+	padding: 15px 20px 15px 44px;
+	background-color: var(--mutedLightest);
+	transition: background-color $duration--xl;
+}
+
+.Radio--voting:hover {
+	background-color: var(--mutedLight);
+	transition: none;
+}
+
+.Radio--voting .Radio__label {
+	padding-left: 5px;
+	font-size: inherit;
+}
+
+.Radio--voting .Radio__label:before {
+	top: 15px;
+	left: 15px;
+			// background-color: var(--success);
+}
+
+.Radio--voting .Radio__tick {
+			// opacity: 1;
+			// transform: none;
+	top: 20px;
+	left: 20px;
+}
+
+.Radio--voting.Radio--colorSuccess:hover {
+	background-color: var(--successLight);
+}

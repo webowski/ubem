@@ -1,0 +1,107 @@
+.Glide {
+	position: relative;
+}
+
+.Glide__slides {
+	max-width: none;
+	padding-left: 0;
+	margin-left: 0;
+	margin-bottom: 0;
+	margin-top: 0;
+	list-style-type: none;
+}
+
+.Glide__slide {
+	padding-left: 0;
+	margin-top: 0;
+}
+
+.Glide__slide:before {
+	display: none;
+}
+
+.Glide__arrow {
+	position: absolute;
+	display: block;
+	z-index: 2;
+	background-color: transparent;
+	cursor: pointer;
+	transition: opacity 150ms ease,border 300ms ease-in-out;
+	top: 10px;
+	margin-top: 0;
+	width: 27px;
+	height: 44px;
+	outline: none;
+	border: 0 none;
+	box-shadow: none;
+	padding: 0;
+	appearance: none;
+	transform: none;
+}
+
+.Glide__arrow .Icon {
+	width: 18px;
+	height: 12px;
+	fill: $muted;
+}
+
+.Glide__arrow--left {
+	left: -10px;
+}
+
+.Glide__arrow--right {
+	right: -10px;
+}
+
+.Glide--userShort {
+	.Glide__arrow {
+		top: 10px;
+		margin-top: 0;
+	}
+
+	.Glide__arrow--left {
+		left: -10px;
+	}
+
+	.Glide__arrow--right {
+		right: -10px;
+	}
+}
+
+.Glide__bullets {
+	@include marginFirstLast;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.Glide__bullet {
+	@include buttonReset;
+	width: 6px;
+	height: 6px;
+	position: relative;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-radius: 6px;
+	background-color: $mutedLight;
+
+	@include mediaUp(md) {
+		width: 8px;
+		height: 8px;
+		margin-left: 6px;
+		margin-right: 6px;
+	}
+}
+
+.Glide__bullet:after {
+	@include pseudoBlock(200%);
+	position: absolute;
+	top: -50%;
+	left: -50%;
+}
+
+.Glide__bullet.is-active {
+	background-color: $brand;
+}

@@ -1,0 +1,111 @@
+// Text
+// ---------------------
+$fontSans:                  'Rubik', sans-serif;
+$fontSerif:                 'Times New Roman', Georgia, serif;
+$fontMono:                  'Ubuntu Mono', monospace;
+$fontMain:                  $fontSans;
+$fontSize:                  16px;
+$lineHeight:                1.50;
+$fontWeight:                400;
+
+
+// Colors
+// ---------------------
+// absolute colors
+$white:                     #fff;
+$whiteDark:                 #e9ebf2;
+$black:                     #090914;
+$gold:                      #ca9e28;
+$blue:                      #00608d;
+$blueLight:                 #60a7ee;
+$blueLightest:              #e9f6fd;
+$red:                       #db4815;
+$green:                     #55b43c;
+$greenLight:                #d1ebcb;
+$grayDarkest:               #323239;
+$grayDark:                  #555559;
+$gray:                      #8c8c8c;
+$grayLight:                 #d7d7d7;
+$grayLightest:              #f5f5f5;
+
+// theme colors
+$brand:                     $gold;
+$voice:                     $blue;
+$voiceLightest:             $blueLightest;
+// $voiceLight:                     $blueLight;
+$success:                   $green;
+$successLight:              $greenLight;
+$danger:                    $red;
+/* $accent:                    #000; */
+$intense:                   $black;
+$major:                     $grayDarkest;
+$minor:                     $gray;
+$muted:                     #a9a9a9;
+$mutedLight:                $grayLight;
+$mutedLightest:             $grayLightest;
+$disabled:                  $grayLight;
+$inverse:                   $white;
+$bg:                        $white;
+$bgAlter:                   #ebebef;
+$border:                    #e3e3e3;
+
+
+// Shapes
+// ---------------------
+ $borderRadius:             4px;
+
+
+// Breakpoints
+// ---------------------
+$xs:    0;       /* Extra small devices (portrait phones, less than 576px) */
+$sm:    576px;   /* Small devices (landscape phones, less than 768px) */
+$md:    768px;   /* Medium devices (tablets, less than 992px) */
+$lg:    992px;   /* Large devices (desktops, less than 1200px) */
+$xl:    1200px;  /* Extra large devices (large desktops) */
+
+$breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+);
+
+
+// Grid
+// ---------------------
+$gridColumns:               24;
+$gridGutter:                30px;
+$gridGutter--xxs:            8px;
+$gridGutter--xs:            12px;
+$gridGutter--sm:            20px;
+$gridGutter--md:            $gridGutter;
+$gridGutter--lg:            48px;
+$gridGutter--xl:            60px;
+
+
+//  Spacing
+// ---------------------
+$spacer:              10px;
+
+
+// Transition & Animation
+// ---------------------
+$duration--sm:        .12s;
+$duration:            .2s;
+$duration--lg:        .3s;
+$duration--xl:        .6s;
+$duration--xxl:       1s;
+
+
+// Libraries
+// ---------------------
+
+// Glide
+$glide-class:               'Glide';
+
+// basicLightbox
+$basicLightbox__background: rgba(0, 0, 0, .8);
+$basicLightbox__zIndex:     1000;
+$basicLightbox__duration:   $duration--lg;
+$basicLightbox__timing:     linear;

@@ -1,0 +1,114 @@
+@mixin makeColumnReady($gutter: $gridGutter) {
+    width: 100%;
+    padding-right: $gutter / 2;
+    padding-left: $gutter / 2;
+    box-sizing: border-box; /* в normalize */
+}
+
+@mixin makeColumnBasic {
+	flex-basis: 0;
+	flex-grow: 1;
+	max-width: 100%;
+}
+
+@mixin makeColumnAuto {
+	flex: 0 0 auto;
+	width: auto;
+	max-width: 100%;
+}
+
+@mixin makeColumn($size, $columns: $gridColumns) {
+	flex: 0 0 ($size / $gridColumns * 100%);
+	max-width: ($size / $gridColumns * 100%);
+}
+
+@mixin makeColumnAuto {
+	flex: 0 0 auto;
+	width: auto;
+	max-width: 100%;
+} 
+
+@mixin marginFirstLast($margin: 0px) {
+
+	&:first-child {
+		margin-top: $margin;
+	}
+
+	&:last-child {
+		margin-bottom: $margin;
+	}
+}
+
+@mixin listReset($removeMargins: false) {
+	padding-left: 0;
+	list-style-type: none;
+
+	@if $removeMargins == true {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	> li {
+		margin-bottom: 0;
+		padding-left: 0;
+		margin-left: 0;
+
+		+ li {
+			margin-top: 0;
+		}
+
+		&:before{
+			display: none;
+		}
+	}
+}
+
+
+@mixin linkReset(){
+	border-bottom: 0 none;
+	text-decoration: none;
+}
+
+@mixin buttonReset(){
+	padding: 0;
+	border: 0 none;
+	appearance: none;
+	box-shadow: none;
+	background: none;
+	cursor: pointer;
+}
+
+@mixin pseudoBlock($width: auto, $height: $width) {
+	width: $width;
+	height: $height;
+	content: '';
+	display: block;
+	position: absolute;
+}
+
+@mixin placeholder {
+	&.placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&::-webkit-input-placeholder {
+		@content;
+	}
+}
+
+@mixin visuallyHidden {
+	width: 1px !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	visibility: hidden !important;
+	margin: -1px !important;
+	position: absolute !important;
+}

@@ -1,0 +1,302 @@
+body {
+	color: var(--major);
+	font-family: var(--fontMain);
+	font-size: var(--fontSize);
+	line-height: var(--lineHeight);
+}
+
+a {
+	@include linkReset;
+	color: var(--voice);
+	border-bottom: 1px solid currentColor;
+	transition:
+		color $duration--sm,
+		border-color $duration--sm,
+		background-color $duration--sm,
+		box-shadow $duration--sm;
+}
+
+a:hover {
+	border-bottom-color: transparent;
+}
+
+// a:focus {
+// 	outline: none;
+// 	box-shadow: 0 0 2px 3px rgba(50,151,211,.3);
+// }
+
+// [data-theme="dark"] a:focus {
+// 	box-shadow:
+// 		0 0 0 3px rgba(100,201,255,.6)
+// }
+
+p {
+	max-width: 750px;
+	margin-top: 0.8rem;
+	margin-bottom: 0.8rem;
+	@include marginFirstLast;
+
+	@include mediaUp(md) {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	margin-top: 2.2rem;
+	margin-bottom: 1rem;
+	@include marginFirstLast;
+	color: var(--intense);
+	line-height: 1.2;
+	font-weight: bold;
+
+	@include mediaUp(md) {
+		margin-top: 2.2rem;
+		margin-bottom: 1rem;
+	}
+}
+
+h1, .h1 {
+	font-size: 24px;
+	line-height: 1.2;
+
+	@include mediaUp(md) {
+		font-size: 36px;
+		line-height: 1.05;
+	}
+}
+
+h2, .h2 {
+	font-size: 22px;
+
+	@include mediaUp(md) {
+		font-size: 30px;
+	}
+}
+
+h3, .h3 {
+	font-size: 20px;
+
+	@include mediaUp(md) {
+		font-size: 24px;
+	}
+}
+
+h4, .h4 {
+	font-size: 20px;
+}
+
+h5, .h5 {
+	font-size: 18px;
+}
+
+h6, .h6 {
+	font-size: 16px;
+}
+
+code {
+	font-family: monospace;
+	border-radius: 3px;
+	color: #eb5a46;
+	padding: 2px 3px;
+	margin: -1px 2px;
+	font-size: 14px;
+	color: #e83e8c;
+	word-wrap: break-word;
+	background-color: #f0f0f4;
+}
+
+pre {
+	-webkit-overflow-scrolling: touch;
+	-webkit-transform: translateZ(0);
+	background-color: #f0f0f4;
+	border-radius: 3px;
+	margin: 12px 0;
+	padding: 10px 12px;
+	word-break: normal;
+	word-wrap: normal;
+	overflow-wrap: normal;
+	tab-size: 4;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+pre code {
+	background-color: none;
+	border-radius: 0;
+	box-shadow: none;
+	color: #172b4d;
+	margin: 0;
+	padding: 0;
+	color: #e83e8c;
+}
+
+/* code, kbd, pre, samp */
+
+ul {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding-left: 0;
+	@include marginFirstLast;
+	list-style-type: none;
+}
+
+ul > li {
+	max-width: 778px;
+	position: relative;
+	margin-top: .5rem;
+	margin-left: 0;
+	padding-left: 18px;
+
+	@include mediaUp(md) {
+		padding-left: 22px;
+	}
+}
+
+ul > li:before {
+	@include pseudoBlock(7px, 7px);
+	top: .55rem;
+	left: 2px;
+	background-color: $brand;
+	border-radius: 8px;
+}
+
+ul > li:first-child {
+	margin-top: 0;
+}
+
+ul > li > ul:first-child {
+	margin-top: 5px;
+}
+
+ul ul {
+	margin-top: 5px;
+}
+
+blockquote {
+	border-left: 6px solid $brand;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 20px;
+	margin-left: 0;
+	margin-right: 0;
+	color: var(--intense);
+	font-weight: 500;
+
+	@include mediaUp(md) {
+		max-width: 750px;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		padding-left: 30px;
+	}
+}
+
+.ListNoMark {
+	@include listReset;
+
+	> li + li {
+		margin-top: 6px;
+	}
+}
+
+.ListNoMark--spread > li + li {
+	margin-top: 10px;
+}
+
+sup {
+	font-size: .6em;
+	vertical-align: 0;
+    position: relative;
+    top: -0.5em;
+}
+
+.Lead {
+	font-size: 18px;
+	line-height: 135%;
+
+	@include mediaUp(md) {
+		font-size: 20px;
+		line-height: 140%;
+	}
+}
+
+
+pre {
+	.hll { background-color: #ffc; }
+	.c { color: #999; }
+	.k { color: #069; }
+	.o { color: #555; }
+	.cm { color: #999; }
+	.cp { color: #099; }
+	.c1 { color: #999; }
+	.cs { color: #999; }
+	.gd { background-color: #fcc; border: 1px solid #c00; }
+	.ge { font-style: italic; }
+	.gr { color: #f00; }
+	.gh { color: #030; }
+	.gi { background-color: #cfc; border: 1px solid #0c0; }
+	.go { color: #aaa; }
+	.gp { color: #009; }
+	.gu { color: #030; }
+	.gt { color: #9c6; }
+	.kc { color: #069; }
+	.kd { color: #069; }
+	.kn { color: #069; }
+	.kp { color: #069; }
+	.kr { color: #069; }
+	.kt { color: #078; }
+	.m { color: #f60; }
+	.s { color: #d44950; }
+	.na { color: #4f9fcf; }
+	.nb { color: #366; }
+	.nc { color: #0a8; }
+	.no { color: #360; }
+	.nd { color: #99f; }
+	.ni { color: #999; }
+	.ne { color: #c00; }
+	.nf { color: #c0f; }
+	.nl { color: #99f; }
+	.nn { color: #0cf; }
+	.nt { color: #2f6f9f; }
+	.nv { color: #033; }
+	.ow { color: #000; }
+	.w { color: #bbb; }
+	.mf { color: #f60; }
+	.mh { color: #f60; }
+	.mi { color: #f60; }
+	.mo { color: #f60; }
+	.sb { color: #c30; }
+	.sc { color: #c30; }
+	.sd { font-style: italic; color: #c30; }
+	.s2 { color: #c30; }
+	.se { color: #c30; }
+	.sh { color: #c30; }
+	.si { color: #a00; }
+	.sx { color: #c30; }
+	.sr { color: #3aa; }
+	.s1 { color: #c30; }
+	.ss { color: #fc3; }
+	.bp { color: #366; }
+	.vc { color: #033; }
+	.vg { color: #033; }
+	.vi { color: #033; }
+	.il { color: #f60; }
+
+	.css .o,
+	.css .o + .nt,
+	.css .nt + .nt { color: #999; }
+
+	.language-bash::before,
+	.language-sh::before {
+	  color: #009;
+	  content: "$ ";
+	  user-select: none;
+	}
+
+	.language-powershell::before {
+	  color: #009;
+	  content: "PM> ";
+	  user-select: none;
+	}
+}

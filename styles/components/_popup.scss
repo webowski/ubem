@@ -1,0 +1,23 @@
+.basicLightbox {
+	background-color: transparent;
+	opacity: 1;
+	transition: background-color $duration--lg;
+	will-change: background-color;
+}
+
+.basicLightbox--visible {
+	background-color: rgba($black,.72);
+}
+
+.basicLightbox__placeholder {
+	transform: scale(.7);
+	opacity: 0;
+	transition: 
+		opacity $duration--lg, 
+		transform $duration--lg;
+}
+
+.basicLightbox--visible .basicLightbox__placeholder {
+	transform: scale(1);
+	opacity: 1;
+}
