@@ -105,12 +105,14 @@ hr {
 						- сочетание сущностей Утилита и Компонент типа БЭМ
 						- анатомия Утилиты
 						- разновидности Утилит
+							SMV - `.subject-media--value`
 							- margin, padding, width
 								- `.py--sm` `.py-sm--sm`
 							- text
 							- grid
 							- custom
 						- анатомия Компонента
+							BEM - `.Block` `.Block__element` `.Block--modificator`
 						-
 
 						---
@@ -118,11 +120,13 @@ hr {
 						## Utility
 						(tool, инструмент, утилита)
 
+
 						`.whatItDoes`
 
 						`.whatItDoes-value`
 
 						`.whatItDoes-media-value`
+
 
 						~~`.whatItDoes--value`~~
 
@@ -130,7 +134,17 @@ hr {
 
 						~~`.whatItDoes-media--value`~~
 
-						~~`.whatItDoes--modificator`~~
+
+						~~`.subject_value`~~
+
+						~~`.subject-media`~~
+
+						~~`.subject-media_value`~~
+
+						&lt;div class="row"&gt;
+							&lt;div class="d_block d-sm_inlineBlock col_24 col-sm_24 col-md_12 col-lg_8  mx_20 my_30 my-sm_20"&gt;&lt;/div&gt;
+						&lt;/div&gt;
+
 
 						- media and value are optional
 						- media is always in the middle
@@ -194,6 +208,36 @@ hr {
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
+
+						<div class="row">
+
+							<div class="stackRow-xsOnly_someValue"></div>
+
+							<div class="d_block d-sm_inlineBlock"></div>
+
+							<div class="col_24 col-sm_24 col-md_12 col-lg_8  mx_20 my_30 my-sm_20"></div>
+
+						</div>
+
+						<div class="row">
+
+							<div class="stackRow-xsOnly--someValue"></div>
+
+							<div class="d--block d-sm--inlineBlock"></div>
+
+							<div class="col--24 col-sm--24 col-md--12 col-lg--8  mx--20 my--30 my-sm--20"></div>
+
+						</div>
+
+						<div class="row">
+
+							<div class="stackRow-xsOnly-someValue"></div>
+
+							<div class="d-block d-sm-inlineBlock"></div>
+
+							<div class="col-24 col-sm-24 col-md-12 col-lg-8  mx-20 my-30 my-sm-20"></div>
+
+						</div>
 
 						<!-- <pre><code>&lt;div class="SomeBlock -modifier is-stateModifier"&gt;
 	&lt;div class="SomeBlock__innerBlock"&gt;&lt;/div&gt;
