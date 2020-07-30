@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Руководство по разработке</title>
+	<title>UBEM</title>
 
 	<link rel="stylesheet" href="./styles/min/common.css">
 	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/atom-one-dark.min.css"> -->
@@ -10,20 +10,69 @@
 	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/monokai-sublime.min.css"> -->
 	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/vs.min.css"> -->
 	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/dracula.min.css"> -->
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/agate.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/agate.min.css">
 
-	<style>
-		pre {
-			padding: 0;
-			background-color: transparent;
-		}
+<style>
+pre {
+	padding: 0;
+	background-color: transparent;
+}
 
-		pre code {
-			background-color: transparent;
-			padding: 20px !important;
-			border-radius: 3px;
-		}
-	</style>
+pre code {
+	background-color: transparent;
+	padding: 20px !important;
+	border-radius: 3px;
+}
+
+.Main {
+	padding-top: 20px;
+	padding-bottom: 40px;
+	word-break: break-word
+}
+
+@media (min-width:768px) {
+	.Main {
+		padding-bottom: 70px
+	}
+}
+
+.Container {
+	max-width: 1150px;
+	max-width: var(--containerMax);
+	padding-left: 16px;
+	padding-left: var(--sidePadding);
+	padding-right: 16px;
+	padding-right: var(--sidePadding);
+	margin-left: auto;
+	margin-right: auto
+}
+
+.Container--main {
+	margin-top: 10px
+}
+
+@media (min-width:768px) {
+	.Container--main {
+		margin-top: 37px
+	}
+}
+
+.Hr,
+hr {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	height: 0;
+	border-width: 1px 0 0;
+	border-top: 1px solid #e3e3e3;
+	border-top: 1px solid var(--border)
+}
+
+.utility-md- {
+	background: #f5f5ff;
+}
+
+</style>
+
 </head>
 <body>
 	<div class="Wrap">
@@ -35,12 +84,12 @@
 			</ul>
 
 		</div> -->
-		<div class="Main">
+		<div class="Main utility-md-">
 
 			<div class="Section">
 				<div class="Container">
 
-					<h1>Руководство по разработке</h1>
+					<h1>UBEM</h1>
 
 				</div>
 			</div>
@@ -50,7 +99,84 @@
 
 					<div class="Box">
 
-						<h3>Именование CSS классов</h3>
+						<pre>
+						sufficient
+						based on using several naming systems,
+						- сочетание сущностей Утилита и Компонент типа БЭМ
+						- анатомия Утилиты
+						- разновидности Утилит
+						- анатомия Компонента
+						-
+
+						---
+
+						## Utility
+						(tool, инструмент, утилита)
+
+						`.whatItDoes`
+
+						`.whatItDoes-value`
+
+						`.whatItDoes-media-value`
+
+						~~`.whatItDoes--value`~~
+
+						~~`.whatItDoes-media`~~
+
+						~~`.whatItDoes-media--value`~~
+
+						~~`.whatItDoes--modificator`~~
+
+						- media and value are optional
+						- media is always in the middle
+						`-xs-` `-xsOnly-` `-md-` `-lg-` `-xl-` `-mdToLg-` `-print-` `-iron-` etc.
+						- value is always last
+						`-major` `-row` `-justify` `-100`  `-38parrots`
+						- all the parts of a utility are in camelCase separated by only one hyphen
+
+						`.jc-md-between`
+
+						`.d-xsOnly-none`
+
+						`.gutter-sm-sm` (parts position is important, middle `sm` is media, last `sm` - is value)
+
+						`.col-sm` не подходит, т.к. media не может быть в конце. Правильно, например `.col-sm-rest`
+
+						### Responsive sizes
+
+						`-2xl` `-3xl` `-74xl`
+
+						---
+
+						## Component
+
+						`SomeComponent` `SomeComponent__innerElement` `SomeComponent--modifier`
+
+						### Reserved prefixes (you can use more)
+
+						`.do-` the hook for using in scripts
+
+						`.is-` component state modifier
+
+						`.has-` component descendant state/presence modifier
+
+						`.g-` global context class
+
+						### Denied
+
+						+ components mixing
+						~~`&lt;div class="OneBlock AnotherBlock"&gt;`~~
+
+						---
+
+						SMACSS (.is- .has-)
+						Atomic CSS (.ml- .text-center)
+						BEM
+						OOCSS (.container)
+
+						+ https://www.creativebloq.com/features/a-web-designers-guide-to-css-methodologies
+						</pre>
+
 						<pre><code class="html">&lt;div class="SomeBlock SomeBlock--modifier do-scriptMagic is-stateModifier"&gt;
 	&lt;div class="SomeBlock__innerBlock"&gt;
 		&lt;div class="row gutter-xs"&gt;
@@ -393,7 +519,7 @@ slideDown(element, 200, function() {
 
 	</div>
 
-<script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+<script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
 
 <script>
 	document.addEventListener('DOMContentLoaded', (event) => {
