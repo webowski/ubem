@@ -84,7 +84,7 @@ hr {
 			</ul>
 
 		</div> -->
-		<div class="Main utility-md-">
+		<div class="Main">
 
 			<div class="Section">
 				<div class="Container">
@@ -105,9 +105,9 @@ hr {
 						- сочетание сущностей Утилита и Компонент типа БЭМ
 						- анатомия Утилиты
 						- разновидности Утилит
-							SMV - `.subject-media--value`
+							SMV - `.subject-media-value`
 							- margin, padding, width
-								- `.py--sm` `.py-sm--sm`
+								- `.py-sm` `.py-sm-sm`
 							- text
 							- grid
 							- custom
@@ -220,6 +220,18 @@ gap-sm-sm
 gap-sm-lg
 gap-sm-xl
 gap-sm-3xl
+
+gap-0
+gap-25
+gap-50
+gap-75
+gap-100
+gap-125
+gap-150
+gap-175
+gap-200
+
+
 							<div class="col_24 col-sm_24 col-md_12 col-lg_8  mx_20 my_30 my-sm_20"></div>
 
 						</div>
@@ -237,38 +249,38 @@ gap-sm-3xl
 						</div>
 
 
-<div class="row gap-sm">
-	<div class="col-eq">
+						<div class="row gap-sm">
+							<div class="col-eq">
 
-		<article class="Teaser">
-			<div class="Teaser__thumb">
-				<img src="" alt="">
-			</div>
-			<div class="Teaser__body"></div>
-		</article>
+								<article class="Teaser">
+									<div class="Teaser__thumb">
+										<img src="" alt="">
+									</div>
+									<div class="Teaser__body"></div>
+								</article>
 
-	</div>
-	<div class="col-eq">
+							</div>
+							<div class="col-eq">
 
-		<article class="Teaser">
-			<div class="Teaser__thumb">
-				<img src="" alt="">
-			</div>
-			<div class="Teaser__body"></div>
-		</article>
+								<article class="Teaser">
+									<div class="Teaser__thumb">
+										<img src="" alt="">
+									</div>
+									<div class="Teaser__body"></div>
+								</article>
 
-	</div>
-	<div class="col-eq">
+							</div>
+							<div class="col-eq">
 
-		<article class="Teaser">
-			<div class="Teaser__thumb">
-				<img src="" alt="">
-			</div>
-			<div class="Teaser__body"></div>
-		</article>
+								<article class="Teaser">
+									<div class="Teaser__thumb">
+										<img src="" alt="">
+									</div>
+									<div class="Teaser__body"></div>
+								</article>
 
-	</div>
-</div>
+							</div>
+						</div>
 
 						<!-- <pre><code>&lt;div class="SomeBlock -modifier is-stateModifier"&gt;
 	&lt;div class="SomeBlock__innerBlock"&gt;&lt;/div&gt;
@@ -312,268 +324,7 @@ gap-sm-3xl
 						<p><code class="html">&lt;div class="SomeBlock AnotherBlock"&gt;&lt;/div&gt;</code></p>
 						<hr class="hr">
 
-						<h3>Сборка (gulp)</h3>
-						<ul>
-							<li><code>styles</code></li>
-							<li><code>watch</code></li>
-							<li><code>browsersync</code></li>
-							<li><code>default (gulp)</code> — minifyjs, minifycss</li>
-							<li><code>dev</code> — styles + watch + browsersync</li>
-							<li><code>settings.json</code></li>
-						</ul>
-
-						<hr class="hr">
-
-						<h3>Добавление значка</h3>
-						<ul>
-							<li>положить svg файл в папку <code>images/vector-icons</code></li>
-							<li>запустить <code>gulp icons</code></li>
-							<li>скопировать из <code>images/sprite.symbol.html</code> код для вставки</li>
-						</ul>
-
-						<hr class="hr">
-
-						<h3>Добавление стиля</h3>
-						<h6>В качестве файла <code>.css</code></h6>
-
-						<pre><code class="html">&lt;!-- отложенная загрузка --&gt;
-&lt;link rel="stylesheet" href="path/to.css" media="nope!" onload="this.media='all'"&gt;</code></pre>
-
-
-						<h6>В качестве файла <code>.scss</code></h6>
-
-						<pre><code class="scss">// общие стили для всех страниц в main.scss
-
-// scss-стили для отдельных интерфейсов</code></pre>
-
-
-						<hr class="hr">
-
-						<h3>Добавление скрипта</h3>
-
-						<h6>В качестве модуля</h6>
-
-						<pre><code class="javascript">// в gulpfile.js
-
-// в scripts/app.js
-</code></pre>
-
-
-						<h6>В качестве файла <code>.js</code></h6>
-
-						<pre><code>&lt;!-- отложенная загрузка --&gt;
-&lt;script defer="defer" src="path/to.js"&gt;&lt;/script&gt;</code></pre>
-
 					</div>
-
-				</div>
-			</div>
-
-			<div class="Section">
-				<div class="Container">
-
-					<h3>Сетка</h3>
-
-					<!-- <div class="grid">
-						<div class="row">
-							<div class="col-4">
-
-								<code>col-4</code>
-
-							</div>
-							<div class="col-4">
-
-								<code>col-4</code>
-
-							</div>
-							<div class="col-4">
-
-								<code>col-4</code>
-
-							</div>
-							<div class="col-4">
-
-								<code>col-4</code>
-
-							</div>
-							<div class="col-4">
-
-								<code>col-4</code>
-
-							</div>
-							<div class="col-4">
-
-								<code>col-4</code>
-
-							</div>
-						</div>
-					</div> -->
-
-					<h3>.Box</h3>
-
-					<!-- <div class="Box Box--sm"><code>Box Box--sm</code></div>
-
-					<div class="Box">Box</div>
-					<div class="Box Box--border">Box Box--border</div>
-
-					<div class="Box Box--lg">Box Box--lg</div> -->
-
-				</div>
-			</div>
-
-			<!-- <div class="Section">
-				<div class="Container">
-
-					<button class="Btn">Btn</button>
-					<button class="Btn Btn--blue">Btn Btn--blue</button>
-
-				</div>
-			</div> -->
-
-			<hr class="hr">
-
-			<div class="Section Section--bgg">
-				<div class="Container">
-
-					<h2>Замена jQuery на Native JS</h2>
-
-					<h4>Выбор элементов</h4>
-
-					<div class="row gutter-sm">
-						<div class="col-24 col-lg-12">
-
-							<h6 class="color-muted mb-5">jQuery</h6>
-
-<pre>
-<code class="javascript">$('.element')
-
-
-// в контексте .container
-var $container = $('.container');
-$('.element', $container)</code></pre>
-
-						</div>
-						<div class="col-24 col-lg-12">
-
-							<h6 class="color-muted mb-5">JS</h6>
-
-<pre>
-<code class="javascript">document.querySelector('.element') // один элемент
-document.querySelectorAll('.element') // все элементы
-
-// в контексте .container
-var container = document.querySelector('.container')
-container.querySelectorAll('.element')
-</code></pre>
-
-						</div>
-					</div>
-
-
-
-					<h4>Добавление/удаление классов</h4>
-
-					<div class="row gutter-sm">
-						<div class="col-24 col-lg-12">
-
-							<h6 class="color-muted mb-5">jQuery</h6>
-
-<pre>
-<code class="javascript">$(element).addClass(className);
-$(element).removeClass(className);</code></pre>
-
-						</div>
-						<div class="col-24 col-lg-12">
-
-							<h6 class="color-muted mb-5">JS</h6>
-
-<pre>
-<code class="javascript">element.classList.add(className);
-element.classList.remove(className);</code></pre>
-
-						</div>
-					</div>
-
-
-
-					<h4>Цикл</h4>
-
-					<div class="row gutter-sm">
-						<div class="col-24 col-lg-12">
-
-							<h6 class="color-muted mb-5">jQuery</h6>
-
-<pre>
-<code class="javascript">// each
-$(selector).each(function(i, el) {
-
-});</code></pre>
-
-						</div>
-						<div class="col-24 col-lg-12">
-
-							<h6 class="color-muted mb-5">JS</h6>
-
-<pre>
-<code class="javascript">// forEach
-var elements = document.querySelectorAll(selector);
-Array.prototype.forEach.call(elements, function(el, i) {
-
-});</code></pre>
-
-						</div>
-					</div>
-
-
-					<h4>Готовность документа</h4>
-
-					<div class="row gutter-sm">
-						<div class="col-24 col-lg-12">
-
-							<h6 class="color-muted mb-5">jQuery</h6>
-
-<pre><code class="javascript">$(document).ready(function() {
-
-});</code></pre>
-
-						</div>
-						<div class="col-24 col-lg-12">
-
-							<h6 class="color-muted mb-5">JS</h6>
-
-<pre><code class="javascript">document.addEventListener('DOMContentLoaded', function() {
-
-});</code></pre>
-
-						</div>
-					</div>
-
-
-					<h4>Анимация slide</h4>
-
-					<div class="row gutter-sm">
-						<div class="col-24 col-lg-12">
-
-							<h6 class="color-muted mb-5">jQuery</h6>
-
-<pre><code class="javascript">$(element).slideDown(200, function() {
-	// callback
-});
-</code></pre>
-
-						</div>
-						<div class="col-24 col-lg-12">
-
-							<h6 class="color-muted mb-5">JS</h6>
-
-<pre><code class="javascript">// с помощью scripts/helpers/Slide.js
-slideDown(element, 200, function() {
-	// callback
-});</code></pre>
-
-						</div>
-					</div>
-
 
 				</div>
 			</div>
