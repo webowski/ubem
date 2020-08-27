@@ -1,37 +1,9 @@
-body {
-	background-color: var(--bg);
-}
-
-.SiteWrap  {
-	overflow: hidden;
-	position: relative;
-	min-height: 100vh;
-}
-
-.Main {
-	padding-top: 20px;
-	padding-bottom: 40px;
-	word-break: break-word;
-
-	@include mediaUp(md) {
-		padding-bottom: 70px;
-	}
-}
-
 .Container {
 	max-width: var(--containerMax);
 	padding-left: var(--sidePadding);
 	padding-right: var(--sidePadding);
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.Container--main {
-	margin-top: 10px;
-
-	@include mediaUp(md) {
-		margin-top: 37px;
-	}
 }
 
 hr, .Hr {
@@ -47,7 +19,37 @@ hr, .Hr {
 	margin-right: -30px;
 }
 
-body.g-noScroll {
+body.G-noScroll {
 	touch-action: none;
 	overflow: hidden;
 }
+
+	.Container {
+		max-width: 1150px;
+		max-width: var(--containerMax);
+		padding-left: 16px;
+		padding-left: var(--sidePadding);
+		padding-right: 16px;
+		padding-right: var(--sidePadding);
+		margin-left: auto;
+		margin-right: auto
+	}
+
+	.Container--main {
+		margin-top: 10px
+	}
+
+	@media (min-width:768px) {
+		.Container--main {
+			margin-top: 37px
+		}
+	}
+
+	hr {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		height: 0;
+		border-width: 1px 0 0;
+		border-top: 1px solid #e3e3e3;
+		border-top: 1px solid var(--border)
+	}

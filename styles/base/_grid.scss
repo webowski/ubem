@@ -31,15 +31,15 @@
 }
 
 @include mediaUp(sm) {
-	.col-sm {
+	.sm\:col {
 		@include makeColumnBasic;
 	}
-	.col-sm-auto {
+	.sm\:col-auto {
 		@include makeColumnAuto;
 	}
 
 	@for $i from 1 through $gridColumns {
-		.col-sm-#{$i} {
+		.sm\:col-#{$i} {
 			@include makeColumnReady;
 			@include makeColumn($i);
 		}
@@ -47,15 +47,15 @@
 }
 
 @include mediaUp(md) {
-	.col-md {
+	.md\:col {
 		@include makeColumnBasic;
 	}
-	.col-md-auto {
+	.md\:col-auto {
 		@include makeColumnAuto;
 	}
 
 	@for $i from 1 through $gridColumns {
-		.col-md-#{$i} {
+		.md\:col-#{$i} {
 			@include makeColumnReady;
 			@include makeColumn($i);
 		}
@@ -63,15 +63,15 @@
 }
 
 @include mediaUp(lg) {
-	.col-lg {
+	.lg\:col {
 		@include makeColumnBasic;
 	}
-	.col-lg-auto {
+	.lg\:col-auto {
 		@include makeColumnAuto;
 	}
 
 	@for $i from 1 through $gridColumns {
-		.col-lg-#{$i} {
+		.lg\:col-#{$i} {
 			@include makeColumnReady;
 			@include makeColumn($i);
 		}
@@ -79,15 +79,15 @@
 }
 
 @include mediaUp(xl) {
-	.col-xl {
+	.xl\:col {
 		@include makeColumnBasic;
 	}
-	.col-xl-auto {
+	.xl\:col-auto {
 		@include makeColumnAuto;
 	}
 
 	@for $i from 1 through $gridColumns {
-		.col-xl-#{$i} {
+		.xl\:col-#{$i} {
 			@include makeColumnReady;
 			@include makeColumn($i);
 		}

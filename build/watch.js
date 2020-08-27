@@ -39,6 +39,7 @@ module.exports = (gulp, tools) => {
 				'templates/**/*.twig',
 				'templates-new/**/*',
 				'test/**/*.html',
+				'*.html',
 				'content/**/*.php',
 			],
 			{cwd: './'},

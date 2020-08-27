@@ -6,7 +6,7 @@
 	display: block !important;
 }
 
-.d-inline-block {
+.d-inlineBlock {
 	display: inline-block !important;
 }
 
@@ -19,89 +19,89 @@
 }
 
 @include mediaUp(sm) {
-	.d-sm-none {
+	.sm\:d-none {
 		display: none !important;
 	}
 
-	.d-sm-block {
+	.sm\:d-block {
 		display: block !important;
 	}
 
-	.d-sm-inline-block {
+	.sm\:d-inlineBlock {
 		display: inline-block !important;
 	}
 
-	.d-sm-inline {
+	.sm\:d-inline {
 		display: inline !important;
 	}
 
-	.d-sm-flex {
+	.sm\:d-flex {
 		display: flex !important;
 	}
 }
 
 @include mediaUp(md) {
-	.d-md-none {
+	.md\:d-none {
 		display: none !important;
 	}
 
-	.d-md-block {
+	.md\:d-block {
 		display: block !important;
 	}
 
-	.d-md-inline-block {
+	.md\:d-inlineBlock {
 		display: inline-block !important;
 	}
 
-	.d-md-inline {
+	.md\:d-inline {
 		display: inline !important;
 	}
 
-	.d-md-flex {
+	.md\:d-flex {
 		display: flex !important;
 	}
 }
 
 @include mediaUp(lg) {
-	.d-lg-none {
+	.lg\:d-none {
 		display: none !important;
 	}
 
-	.d-lg-block {
+	.lg\:d-block {
 		display: block !important;
 	}
 
-	.d-lg-inline-block {
+	.lg\:d-inlineBlock {
 		display: inline-block !important;
 	}
 
-	.d-lg-inline {
+	.lg\:d-inline {
 		display: inline !important;
 	}
 
-	.d-lg-flex {
+	.lg\:d-flex {
 		display: flex !important;
 	}
 }
 
 @include mediaUp(xl) {
-	.d-xl-none {
+	.xl\:d-none {
 		display: none !important;
 	}
 
-	.d-xl-block {
+	.xl\:d-block {
 		display: block !important;
 	}
 
-	.d-xl-inline-block {
+	.xl\:d-inlineBlock {
 		display: inline-block !important;
 	}
 
-	.d-xl-inline {
+	.xl\:d-inline {
 		display: inline !important;
 	}
 
-	.d-xl-flex {
+	.xl\:d-flex {
 		display: flex !important;
 	}
 }
@@ -127,73 +127,73 @@
 }
 
 @include mediaUp(sm) {
-	.justify-sm-start {
+	.sm\:justify-start {
 		justify-content: flex-start !important;
 	}
 
-	.justify-sm-end {
+	.sm\:justify-end {
 		justify-content: flex-end !important;
 	}
 
-	.justify-sm-center {
+	.sm\:justify-center {
 		justify-content: center !important;
 	}
 
-	.justify-sm-between {
+	.sm\:justify-between {
 		justify-content: space-between !important;
 	}
 }
 
 @include mediaUp(md) {
-	.justify-md-start {
+	.md\:justify-start {
 		justify-content: flex-start !important;
 	}
 
-	.justify-md-end {
+	.md\:justify-end {
 		justify-content: flex-end !important;
 	}
 
-	.justify-md-center {
+	.md\:justify-center {
 		justify-content: center !important;
 	}
 
-	.justify-md-between {
+	.md\:justify-between {
 		justify-content: space-between !important;
 	}
 }
 
 @include mediaUp(lg) {
-	.justify-lg-start {
+	.lg\:justify-start {
 		justify-content: flex-start !important;
 	}
 
-	.justify-lg-end {
+	.lg\:justify-end {
 		justify-content: flex-end !important;
 	}
 
-	.justify-lg-center {
+	.lg\:justify-center {
 		justify-content: center !important;
 	}
 
-	.justify-lg-between {
+	.lg\:justify-between {
 		justify-content: space-between !important;
 	}
 }
 
 @include mediaUp(xl) {
-	.justify-xl-start {
+	.xl\:justify-start {
 		justify-content: flex-start !important;
 	}
 
-	.justify-xl-end {
+	.xl\:justify-end {
 		justify-content: flex-end !important;
 	}
 
-	.justify-xl-center {
+	.xl\:justify-center {
 		justify-content: center !important;
 	}
 
-	.justify-xl-between {
+	.xl\:justify-between {
 		justify-content: space-between !important;
 	}
 }
@@ -219,73 +219,73 @@
 }
 
 @include mediaUp(sm) {
-	.align-sm-start {
+	.sm\:align-start {
 		align-items: flex-start !important;
 	}
 
-	.align-sm-end {
+	.sm\:align-end {
 		align-items: flex-end !important;
 	}
 
-	.align-sm-center {
+	.sm\:align-center {
 		align-items: center !important;
 	}
 
-	.align-sm-stretch {
+	.sm\:align-stretch {
 		align-items: stretch !important;
 	}
 }
 
 @include mediaUp(md) {
-	.align-md-start {
+	.md\:align-start {
 		align-items: flex-start !important;
 	}
 
-	.align-md-end {
+	.md\:align-end {
 		align-items: flex-end !important;
 	}
 
-	.align-md-center {
+	.md\:align-center {
 		align-items: center !important;
 	}
 
-	.align-md-stretch {
+	.md\:align-stretch {
 		align-items: stretch !important;
 	}
 }
 
 @include mediaUp(lg) {
-	.align-lg-start {
+	.lg\:align-start {
 		align-items: flex-start !important;
 	}
 
-	.align-lg-end {
+	.lg\:align-end {
 		align-items: flex-end !important;
 	}
 
-	.align-lg-center {
+	.lg\:align-center {
 		align-items: center !important;
 	}
 
-	.align-lg-stretch {
+	.lg\:align-stretch {
 		align-items: stretch !important;
 	}
 }
 
 @include mediaUp(xl) {
-	.align-xl-start {
+	.xl\:align-start {
 		align-items: flex-start !important;
 	}
 
-	.align-xl-end {
+	.xl\:align-end {
 		align-items: flex-end !important;
 	}
 
-	.align-xl-center {
+	.xl\:align-center {
 		align-items: center !important;
 	}
 
-	.align-xl-stretch {
+	.xl\:align-stretch {
 		align-items: stretch !important;
 	}
 }

@@ -1,0 +1,49 @@
+body {
+	background-color: var(--bg);
+}
+
+.Wrap {
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+}
+
+.Sidepanel {
+	height: 100vh;
+	width: 340px;
+	padding: 40px;
+	background-color: #2a212F;
+	color: $white;
+	overflow: auto;
+}
+
+.SideNav ul {
+	@include listReset;
+	line-height: 1.25;
+}
+
+.SideNav ul ul {
+	margin-top: 12px;
+}
+
+.SideNav ul ul li {
+	padding-left: 20px;
+}
+
+.SideNav ul li + li {
+	margin-top: 12px;
+}
+
+.SideNav ul li:before {
+	display: none;
+}
+
+.SideNav a {
+	color: var(--white);
+	border-bottom: 0 none;
+}
+
+.Main {
+	// padding: 20px;
+	overflow: auto;
+}

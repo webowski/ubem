@@ -3,335 +3,190 @@
 <head>
 	<meta charset="UTF-8">
 	<title>UBEM</title>
-
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="./styles/min/common.css">
-	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/atom-one-dark.min.css"> -->
-	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/railscasts.min.css"> -->
-	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/monokai-sublime.min.css"> -->
-	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/vs.min.css"> -->
-	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/dracula.min.css"> -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/agate.min.css">
-
-<style>
-pre {
-	padding: 0;
-	background-color: transparent;
-}
-
-pre code {
-	background-color: transparent;
-	padding: 20px !important;
-	border-radius: 3px;
-}
-
-.Main {
-	padding-top: 20px;
-	padding-bottom: 40px;
-	word-break: break-word
-}
-
-@media (min-width:768px) {
-	.Main {
-		padding-bottom: 70px
-	}
-}
-
-.Container {
-	max-width: 1150px;
-	max-width: var(--containerMax);
-	padding-left: 16px;
-	padding-left: var(--sidePadding);
-	padding-right: 16px;
-	padding-right: var(--sidePadding);
-	margin-left: auto;
-	margin-right: auto
-}
-
-.Container--main {
-	margin-top: 10px
-}
-
-@media (min-width:768px) {
-	.Container--main {
-		margin-top: 37px
-	}
-}
-
-.Hr,
-hr {
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-	height: 0;
-	border-width: 1px 0 0;
-	border-top: 1px solid #e3e3e3;
-	border-top: 1px solid var(--border)
-}
-
-.utility-md- {
-	background: #f5f5ff;
-}
-
-</style>
-
 </head>
 <body>
 	<div class="Wrap">
 
-		<!-- <div class="Sidepanel">
+		<div class="Sidepanel">
+			<h2 class="color-white">UBEM</h2>
 
-			<ul>
-				<li><a href="#naming">Именование классов</a></li>
-			</ul>
+			<nav class="SideNav">
+				<ul>
+					<li><a href="#utility">Utility</a>
+						<ul>
+							<li><a href="">Morphology</a></li>
+							<li><a href="">Examples</a></li>
+						</ul>
+					</li>
+					<li><a href="#bem">Block + Element + Modificator</a>
+						<ul>
+							<li><a href="">Morphology</a></li>
+							<li><a href="">Examples</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
 
-		</div> -->
-		<div class="Main">
+		<main class="Main">
+			<div class="Section container">
 
-			<div class="Section">
-				<div class="Container">
+				<!-- <h1 class="visuallyHidden">UBEM</h1> -->
 
-					<h1>UBEM</h1>
+				<p>Yes, the yet another CSS naming system. Here is nothing new, just a sufficient set of known practices to use.</p>
 
-				</div>
-			</div>
+				<p>UBEM stands for Utility and Block+Element+Modifier</p>
 
-			<div class="Section">
-				<div class="Container">
+				<p>At first, the example:</p>
 
-					<div class="Box">
-
-						<pre>
-						sufficient
-						based on using several naming systems,
-						- сочетание сущностей Утилита и Компонент типа БЭМ
-						- анатомия Утилиты
-						- разновидности Утилит
-							SMV - `.subject-media-value`
-							- margin, padding, width
-								- `.py-sm` `.py-sm-sm`
-							- text
-							- grid
-							- custom
-						- анатомия Компонента
-							BEM - `.Block` `.Block__element` `.Block--modificator`
-						-
-
-						---
-
-						## Utility
-						(tool, инструмент, утилита)
-
-
-						`.whatItDoes`
-
-						`.whatItDoes-value`
-
-						`.whatItDoes-media-value`
-
-
-						~~`.whatItDoes--value`~~
-
-						~~`.whatItDoes-media`~~
-
-						~~`.whatItDoes-media--value`~~
-
-
-						~~`.subject_value`~~
-
-						~~`.subject-media`~~
-
-						~~`.subject-media_value`~~
-
-						&lt;div class="row"&gt;
-							&lt;div class="d_block d-sm_inlineBlock col_24 col-sm_24 col-md_12 col-lg_8  mx_20 my_30 my-sm_20"&gt;&lt;/div&gt;
-						&lt;/div&gt;
-
-
-						- media and value are optional
-						- media is always in the middle
-						`-xs-` `-xsOnly-` `-md-` `-lg-` `-xl-` `-mdToLg-` `-print-` `-iron-` etc.
-						- value is always last
-						`-major` `-row` `-justify` `-100`  `-38parrots`
-						- all the parts of a utility are in camelCase separated by only one hyphen
-
-						`.jc-md-between`
-
-						`.d-xsOnly-none`
-
-						`.gutter-sm-sm` (parts position is important, middle `sm` is media, last `sm` - is value)
-
-						`.col-sm` не подходит, т.к. media не может быть в конце. Правильно, например `.col-sm-rest`
-
-						### Responsive sizes
-
-						`-2xl` `-3xl` `-74xl`
-
-						---
-
-						## Component
-
-						`SomeComponent` `SomeComponent__innerElement` `SomeComponent--modifier`
-
-						### Reserved prefixes (you can use more)
-
-						`.do-` the hook for using in scripts
-
-						`.is-` component state modifier
-
-						`.has-` component descendant state/presence modifier
-
-						`.g-` global context class
-
-						### Denied
-
-						+ components mixing
-						~~`&lt;div class="OneBlock AnotherBlock"&gt;`~~
-
-						---
-
-						SMACSS (.is- .has-)
-						Atomic CSS (.ml- .text-center)
-						BEM
-						OOCSS (.container)
-
-						+ https://www.creativebloq.com/features/a-web-designers-guide-to-css-methodologies
-						</pre>
-
-						<pre><code class="html">&lt;div class="SomeBlock SomeBlock--modifier do-scriptMagic is-stateModifier"&gt;
+				<pre><code class="html">&lt;div class="SomeBlock SomeBlock--modifier do-scriptMagic is-stateModifier"&gt;
 	&lt;div class="SomeBlock__innerBlock"&gt;
-		&lt;div class="row gutter-xs"&gt;
-			&lt;div class="col-18"&gt;
+
+		&lt;div class="row gap-xs md:gap-sm"&gt;
+			&lt;div class="col-12 md:col-4 lg:col-3 mb-10 md:mb-0"&gt;
+
+				&lt;a href="#goThere" class="color-brand fw-bold fz-lg"&gt;Something to click&lt;/a&gt;
 
 			&lt;/div&gt;
-			&lt;div class="col-6"&gt;
+			&lt;div class="col-12 md:col-8 lg:col-9"&gt;
+
+				&lt;p class="color-major fz-md"&gt;Something to read&lt;/p&gt;
+				&lt;p class="xsOnly:d-none"&gt;Something not for smallest screens&lt;/p&gt;
 
 			&lt;/div&gt;
 		&lt;/div&gt;
+
 	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-						<div class="row">
 
-							<div class="stackRow-xsOnly_someValue"></div>
+				- sufficient
+				- based on using several naming systems,
+				- сочетание сущностей Утилита и Компонент типа БЭМ
 
-							<div class="d_block d-sm_inlineBlock"></div>
-gap-0
-gap-sm == gap-all-sm
-gap-sm-sm
-gap-sm-lg
-gap-sm-xl
-gap-sm-3xl
+				SMACSS (.is- .has-)
+					Atomic CSS (.ml- .text-center)
+					BEM
+					OOCSS (.container)
 
-gap-0
-gap-25
-gap-50
-gap-75
-gap-100
-gap-125
-gap-150
-gap-175
-gap-200
+					+ https://www.creativebloq.com/features/a-web-designers-guide-to-css-methodologies
 
+				<h2 id="utility" class="color-minor">Utility</h2>
 
-							<div class="col_24 col-sm_24 col-md_12 col-lg_8  mx_20 my_30 my-sm_20"></div>
+				<h4>Utility anathomy</h4>
 
-						</div>
+				<p><code>[media:]subject[-value]</code></p>
+				<p><code>[media:]whatItDoesOrMean[-value]</code></p>
 
-						<div class="row">
+				`.whatItDoes`
 
-							<div class="stackRow-xsOnly-someValue"></div>
+				`.whatItDoes-value`
 
-							<div class="d-block d-sm-inlineBlock"></div>
+				`.media:whatItDoes-value`
 
-							<div class="col-eq col-sm-24 col-md-12 col-lg-8  mx-20 my-30 my-sm-20"></div>
-							<div class="col-eq"></div>
-							<div class="col-eq"></div>
+				<ul>
+					<li>Media and value are optional</li>
+					<li>All the parts of a utility are in camel case</li>
+				</ul>
 
-						</div>
+				<h4>Utility examples</h4>
 
+				<ul>
+					<li>Media part examples <code>sm:</code> <code>md:</code> <code>lg:</code> <code>xl:</code> <code>mdDown:</code> <code>xsOnly:</code> <code>print:</code> <code>iron:</code></li>
+					<li>Value part examples <code>-major</code> <code>-3xl</code> <code>-extraBold</code> <code>-100</code> <code>-180deg</code> <code>-38parrots</code></li>
+				</ul>
 
-						<div class="row gap-sm">
-							<div class="col-eq">
+				<pre>
+				- margin, padding, width
+					- sm:py-2 sm:py-sm
+				- text
+				- grid
+				- custom
+				md:jc-between
+				xsOnly:d-none
+				print:d-none
+				sm:gap-sm
+				sm:gap-3xl
+				</pre>
 
-								<article class="Teaser">
-									<div class="Teaser__thumb">
-										<img src="" alt="">
-									</div>
-									<div class="Teaser__body"></div>
-								</article>
-
-							</div>
-							<div class="col-eq">
-
-								<article class="Teaser">
-									<div class="Teaser__thumb">
-										<img src="" alt="">
-									</div>
-									<div class="Teaser__body"></div>
-								</article>
-
-							</div>
-							<div class="col-eq">
-
-								<article class="Teaser">
-									<div class="Teaser__thumb">
-										<img src="" alt="">
-									</div>
-									<div class="Teaser__body"></div>
-								</article>
-
-							</div>
-						</div>
-
-						<!-- <pre><code>&lt;div class="SomeBlock -modifier is-stateModifier"&gt;
-	&lt;div class="SomeBlock__innerBlock"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre> -->
+				<ul>
+					<li>Сетка <code>.row</code>, <code>.col-*</code>, <code>.grid</code>, <code>.gutter-*</code></li>
+					<li>Утилиты
 						<ul class="list">
-							<li><code>.SomeBlock</code> - блок (TitleCase)</li>
-							<li><code>.SomeBlock__innerBlock</code> — элемент</li>
-							<li>Модификаторы:
-								<ul>
-									<li><code>.SomeBlock--modifier</code> — модификатор (camelCase)</li>
-									<li><code>.is-*</code> — состояние блока (<code>is-selected</code>)</li>
-									<li><code>.has-*</code> — наличие потомка, или состояние (<code>has-focus</code> например)</li>
-								</ul>
-							</li>
-							<li><code>.do-*</code> — префикс классов для навешивания скриптов</li>
-							<!-- <li><code>.*-set</code> — обёртка для повторяющихся блоков</li> -->
-							<!-- <li><code>.*-card</code> — повторяющийся блок (комментарий, статья)</li> -->
-							<li>Сетка <code>.row</code>, <code>.col-*</code>, <code>.grid</code>, <code>.gutter-*</code></li>
-							<li>Утилиты
+							<li>Кастомные <code>.whatItDoesOrMeans</code> (<code>.expandLinkArea</code>, <code>.visuallyHidden</code>)</li>
+							<li>Атомарные
 								<ul class="list">
-									<li>Кастомные <code>.u-whatItDoes</code> (<code>.u-expandLinkArea</code>)</li>
-									<li>Атомарные
-										<ul class="list">
-											<li>блочные: <code>.d-*</code>, <code>.justify-*</code>, <code>.align-*</code></li>
-											<!-- <li><code>.border-*</code> </li> -->
-											<li>поля и отступы <code>.p-*</code> <code>.mx-*</code></li>
-											<!-- <li><code>.shadow-*</code> </li> -->
-											<li>текстовые: <code>.text-*</code>, <code>.font-*</code>, <code>.color-*</code>, <code>.list-*</code> (<code>.font-size-sm</code>)</li>
-										</ul>
-									</li>
+									<li>блочные: <code>.d-*</code>, <code>.justify-*</code>, <code>.align-*</code></li>
+									<!-- <li><code>.border-*</code> </li> -->
+									<li>поля и отступы <code>.p-*</code> <code>.mx-*</code></li>
+									<!-- <li><code>.shadow-*</code> </li> -->
+									<li>текстовые: <code>.text-*</code>, <code>.font-*</code>, <code>.color-*</code>, <code>.list-*</code> (<code>.fontSize-sm</code>)</li>
 								</ul>
 							</li>
-							<li>Классы глобального контекста <code>.g-*</code> (<code>.g-mobile</code>, <code>.g-logged</code>, <code>.g-loggedUrist</code>)</li>
 						</ul>
+					</li>
+					<li>Классы глобального контекста <code>.G-*</code> (<code>.G-logged</code>, <code>.G-admin</code>)</li>
+				</ul>
 
-						<hr class="hr">
+				<h2 id="bem" class="color-minor">Block + Element + Modifier</h2>
 
-						<h3 class="color-danger">Нельзя</h3>
+				<code>.Block</code> <code>.Block__element</code> <code>.Block--modifier</code>
 
-						<h5>Скрещивать блоки</h5>
-						<p><code class="html">&lt;div class="SomeBlock AnotherBlock"&gt;&lt;/div&gt;</code></p>
-						<hr class="hr">
+				<ul>
+					<li><code>.SomeBlock</code> - блок (TitleCase)</li>
+					<li><code>.SomeBlock__innerBlock</code> — элемент</li>
+					<li>Модификаторы:
+						<ul>
+							<li><code>.SomeBlock--modifier</code> — модификатор (camelCase)</li>
+							<li><code>.is-*</code> — состояние блока (<code>is-selected</code>)</li>
+							<li><code>.has-*</code> — наличие потомка, или состояние (<code>has-focus</code> например)</li>
+						</ul>
+					</li>
+					<li><code>.do-*</code> — префикс классов для навешивания скриптов</li>
+				</ul>
 
-					</div>
+				<pre>
+
+				### Reserved prefixed modifier
+
+				`.do-` the hook for using in scripts
+
+				`.is-` component state modifier
+
+				`.has-` state or present of a descendant
+
+				`.G-` global context class
+
+				Don't worry, it's okay that prefixed modifiers looks like a utilities.
+				The main thing is that they have meaningful names. `do-blockExpand` for example.
+
+				(you can use more)
+
+				### Denied
+
+				+ components mixing
+				~~`&lt;div class="OneBlock AnotherBlock"&gt;`~~
+
+				</pre>
+
+				<div class="Box">
+
+					<hr class="hr">
+
+					<h3 class="color-danger">Нельзя</h3>
+
+					<h5>Скрещивать блоки</h5>
+					<p><code class="html">&lt;div class="SomeBlock AnotherBlock"&gt;&lt;/div&gt;</code></p>
+					<hr class="hr">
 
 				</div>
+
 			</div>
+		</main>
 
-		</div>
-
-		<div class="Footer">
+		<!-- <div class="Footer">
 			<div class="Footer__top">
 				<div class="container">
 
@@ -346,7 +201,7 @@ gap-200
 
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 	</div>
 
