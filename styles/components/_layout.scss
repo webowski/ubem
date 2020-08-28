@@ -10,8 +10,12 @@ body {
 
 .Sidepanel {
 	height: 100vh;
-	width: 300px;
+	width: 280px;
 	flex: 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
 	padding: 40px;
 	background-color: #2a212F;
 	color: $white;
@@ -19,16 +23,49 @@ body {
 	cursor: default;
 }
 
+.Sidepanel > * {
+}
+
 .Sidepanel h1 {
 	font-weight: 800;
 }
 
 .Sidepanel hr {
+	margin-top: 1.75rem;
+	margin-bottom: 2rem;
 	border-color: rgba(225,225,255, .22);
+	width: 100%;
+}
+
+.Sidepanel a {
+	color: rgba(225,225,255, .55);
+	border-bottom: 0 none;
+	transition: color 1s;
+}
+
+.Sidepanel a:hover {
+	color: var(--white);
+	transition: color .1s;
+}
+
+.Sidepanel__bottom {
+	padding-top: 2rem;
+	margin-top: auto;
+	font-size: .8125rem;
+}
+
+.Sidepanel__bottom a {
+	color: rgba(225,225,255, .4);
+	border-bottom: 0 none;
+}
+
+.Sidepanel__bottom a:hover {
+	color: var(--white);
 }
 
 .SideNav ul {
 	@include listReset;
+	font-size: .875rem;
 	line-height: 1.35;
 }
 
@@ -46,20 +83,11 @@ body {
 }
 
 .SideNav ul li + li {
-	margin-top: 10px;
+	margin-top: 12px;
 }
 
 .SideNav ul li:before {
 	display: none;
-}
-
-.SideNav a {
-	color: rgba(225,225,255, .7);
-	border-bottom: 0 none;
-}
-
-.SideNav a:hover {
-	color: var(--white);
 }
 
 .Main {

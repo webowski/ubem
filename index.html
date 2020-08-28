@@ -10,63 +10,73 @@
 	<div class="Wrap">
 
 		<header class="Sidepanel">
-			<h1 class="color-white">UBEM</h1>
+			<div class="Sidepanel__top">
 
-			<hr>
+				<h1 class="color-white">UBEM</h1>
 
-			<nav class="SideNav">
-				<ul>
-					<li><a href="#utility">Utility</a>
-						<ul>
-							<li><a href="">Morphology</a></li>
-							<li><a href="">Examples</a></li>
-						</ul>
-					</li>
-					<li><a href="#bem">Block + Element + Modifier</a>
-						<ul>
-							<li><a href="">Morphology</a></li>
-							<li><a href="">Examples</a></li>
-						</ul>
-					</li>
-				</ul>
-			</nav>
+				<hr>
+
+				<nav class="SideNav">
+					<ul>
+						<li><a href="#utility">Utility</a>
+							<ul>
+								<li><a href="#utility-anatomy">Anatomy</a></li>
+								<li><a href="#utility-examples">Examples</a></li>
+								<li><a href="#utility-exception">Exception</a></li>
+							</ul>
+						</li>
+						<li><a href="#bem">Block-Element-Modifier</a>
+							<ul>
+								<li><a href="#bem-anatomy">Anatomy</a></li>
+								<li><a href="#bem-modifiers">Modifiers</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+
+			</div>
+			<div class="Sidepanel__bottom">
+
+				<a href="mailto:dev@webowski.ru">dev@webowski.ru</a>
+
+			</div>
 		</header>
 
 		<main class="Main">
 			<div class="Section container">
 
-				<!-- <h1 class="visuallyHidden">UBEM</h1> -->
+				<p class="fz-xl lh-130">Yes, the yet another CSS naming system. Here is nothing new, just a useful set of known practices.</p>
 
-				<p>Yes, the yet another CSS naming system. Here is nothing new, just a sufficient set of known practices to use.</p>
+				<p>UBEM stands for Utility and Block-Element-Modifier.</p>
 
-				<p>UBEM stands for Utility and Block+Element+Modifier</p>
+				<p>At first, the example how it might look:</p>
 
-				<p>At first, the example:</p>
+				<pre><code class="html">&lt;article class="SomeBlock SomeBlock--modifier do-scriptMagic is-stateModifier"&gt;
+	&lt;header class="SomeBlock__element"&gt;
 
-				<pre><code class="html">&lt;div class="SomeBlock SomeBlock--modifier do-scriptMagic is-stateModifier"&gt;
-	&lt;div class="SomeBlock__innerBlock"&gt;
+	&lt;/header&gt;
+	&lt;div class="SomeBlock__anotherElement"&gt;
 
-		&lt;div class="row gap-xs md:gap-sm"&gt;
-			&lt;div class="col-12 md:col-4 lg:col-3 mb-10 md:mb-0"&gt;
+		&lt;div class="row  gap-xs md:gap-sm"&gt;
+			&lt;div class="col-12 md:col-4 lg:col-3"&gt;
 
-				&lt;a href="#goThere" class="color-brand fw-bold fz-lg"&gt;Something to click&lt;/a&gt;
+				&lt;a href="#goThere" class="fw-bold fz-lg"&gt;Something to click&lt;/a&gt;
 
 			&lt;/div&gt;
 			&lt;div class="col-12 md:col-8 lg:col-9"&gt;
 
-				&lt;p class="color-major fz-md"&gt;Something to read&lt;/p&gt;
-				&lt;p class="xsOnly:d-none"&gt;Something not for smallest screens&lt;/p&gt;
+				&lt;p class="color-brand fz-md"&gt;Something to read&lt;/p&gt;
+				&lt;p class="color-major xsOnly:d-none"&gt;Something not for smallest screens&lt;/p&gt;
 
 			&lt;/div&gt;
 		&lt;/div&gt;
 
 	&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/article&gt;</code></pre>
 
-
-				- sufficient
-				- based on using several naming systems,
+				Is based on using two entities - utility and component
 				- сочетание сущностей Утилита и Компонент типа БЭМ
+				utility and component
 
 				SMACSS (.is- .has-)
 					Atomic CSS (.ml- .text-center)
@@ -77,23 +87,17 @@
 
 				<h2 id="utility" class="color-minor">Utility</h2>
 
-				<h4>Utility anathomy</h4>
+				<h3 id="utility-anatomy">Utility anatomy</h3>
 
 				<p><code>[media:]subject[-value]</code></p>
-				<p><code>[media:]whatItDoesOrMean[-value]</code></p>
-
-				`.whatItDoes`
-
-				`.whatItDoes-value`
-
-				`.media:whatItDoes-value`
+				<p><code>[mediaPoint:]whatItDoesOrMean[-specificValue]</code></p>
 
 				<ul>
 					<li>Media and value are optional</li>
 					<li>All the parts of a utility are in camel case</li>
 				</ul>
 
-				<h4>Utility examples</h4>
+				<h3 id="utility-examples">Utility examples</h3>
 
 				<ul>
 					<li>Media part examples <code>sm:</code> <code>md:</code> <code>lg:</code> <code>xl:</code> <code>mdDown:</code> <code>xsOnly:</code> <code>print:</code> <code>iron:</code></li>
@@ -120,30 +124,38 @@
 							<li>Кастомные <code>.whatItDoesOrMeans</code> (<code>.expandLinkArea</code>, <code>.visuallyHidden</code>)</li>
 							<li>Атомарные
 								<ul class="list">
-									<li>блочные: <code>.d-*</code>, <code>.justify-*</code>, <code>.align-*</code></li>
-									<!-- <li><code>.border-*</code> </li> -->
+									<li>блочные: <code>d</code>, <code>.justify-*</code>, <code>.align-*</code></li>
 									<li>поля и отступы <code>.p-*</code> <code>.mx-*</code></li>
-									<!-- <li><code>.shadow-*</code> </li> -->
 									<li>текстовые: <code>.text-*</code>, <code>.font-*</code>, <code>.color-*</code>, <code>.list-*</code> (<code>.fontSize-sm</code>)</li>
 								</ul>
 							</li>
 						</ul>
 					</li>
-					<li>Классы глобального контекста <code>.G-*</code> (<code>.G-logged</code>, <code>.G-admin</code>)</li>
 				</ul>
 
-				<h2 id="bem" class="color-minor">Block + Element + Modifier</h2>
+				<h3 id="utility-exception">Exception</h3>
+
+				<p>Global context utility with G prefix. <code>.G-*</code> (<code>.G-logged</code>, <code>.G-admin</code>). If necessary you can add global context classes to the body tag.</p>
+
+				<h2 id="bem" class="color-minor">Block-Element-Modifier</h2>
+
+				<h3 id="bem-anatomy">Anatomy</h3>
 
 				<code>.Block</code> <code>.Block__element</code> <code>.Block--modifier</code>
+
+				<h3 id="bem-modifiers">Modifiers</h3>
 
 				<ul>
 					<li><code>.SomeBlock</code> - блок (TitleCase)</li>
 					<li><code>.SomeBlock__innerBlock</code> — элемент</li>
+				</ul>
+
+				<ul>
 					<li>Модификаторы:
 						<ul>
 							<li><code>.SomeBlock--modifier</code> — модификатор (camelCase)</li>
 							<li><code>.is-*</code> — состояние блока (<code>is-selected</code>)</li>
-							<li><code>.has-*</code> — наличие потомка, или состояние (<code>has-focus</code> например)</li>
+							<li><code>.has-*</code> — наличие потомка, или состояние (<code>has-error</code> например)</li>
 						</ul>
 					</li>
 					<li><code>.do-*</code> — префикс классов для навешивания скриптов</li>
@@ -173,17 +185,12 @@
 
 				</pre>
 
-				<div class="Box">
+				<hr>
 
-					<hr class="hr">
+				<h3 class="color-danger">Нельзя</h3>
 
-					<h3 class="color-danger">Нельзя</h3>
-
-					<h5>Скрещивать блоки</h5>
-					<p><code class="html">&lt;div class="SomeBlock AnotherBlock"&gt;&lt;/div&gt;</code></p>
-					<hr class="hr">
-
-				</div>
+				<h5>Скрещивать блоки</h5>
+				<p><code class="html">&lt;div class="SomeBlock AnotherBlock"&gt;&lt;/div&gt;</code></p>
 
 			</div>
 		</main>
