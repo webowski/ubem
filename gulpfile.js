@@ -59,9 +59,9 @@ gulp.task('watch',        getTask('watch'));
 gulp.task('browser-reload', () => { return tools.browserSync.reload() });
 
 // Default
-gulp.task('default', gulp.parallel(
+gulp.task('default', gulp.series(
 	'icons',
-	'scripts',
+	// 'scripts',
 	'styles',
 ));
 
