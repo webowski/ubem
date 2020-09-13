@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>UBEM</title>
-	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;800&display=swap" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css2?family=Rubik:wght@400;700;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="./styles/min/common.css">
 </head>
 <body>
@@ -18,17 +18,18 @@
 
 				<nav class="SideNav">
 					<ul>
+						<li><a href="#intro">Intro</a></li>
 						<li><a href="#utility">Utility</a>
 							<ul>
 								<li><a href="#utility-anatomy">Anatomy</a></li>
 								<li><a href="#utility-examples">Examples</a></li>
-								<li><a href="#utility-exception">Exception</a></li>
 							</ul>
 						</li>
-						<li><a href="#bem">Block-Element-Modifier</a>
+						<li><a href="#component">Component</a>
 							<ul>
-								<li><a href="#bem-anatomy">Anatomy</a></li>
-								<li><a href="#bem-modifiers">Modifiers</a></li>
+								<li><a href="#component-anatomy">Anatomy</a></li>
+								<li><a href="#component-modifiers">Modifiers</a></li>
+								<li><a href="#component-avoid">Avoid</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -45,11 +46,70 @@
 		<main class="Main">
 			<div class="Section container">
 
-				<p class="fz-xl lh-130">Yes, the yet another CSS naming system. Here is nothing new, just a useful set of known practices.</p>
+				<p id="intro" class="fz-xl lh-130">Yes, yet another CSS naming system. Here is nothing new, just a useful set of known practices.</p>
 
-				<p>UBEM stands for Utility and Block-Element-Modifier.</p>
+				<p>UBEM is based on using two entities - utility and component. The main goal is to use most recognizable combination of letter cases and parts separators.</p>
 
-				<p>At first, the example how it might look:</p>
+				<h2 id="utility">Utility</h2>
+
+				<h3 id="utility-anatomy">Utility anatomy</h3>
+
+				<pre><code class="html">&lt;div class="media:subject-value"&gt;&lt;/div&gt;</code></pre>
+
+				<ul>
+					<li>Media part is optional and used for responsive styles</li>
+					<li>Value part is optional and used for utility varied values</li>
+					<li>All the parts of a utility are in camel case</li>
+				</ul>
+
+				<h3 id="utility-examples">Utility examples</h3>
+
+				<h4>Block</h4>
+
+				<pre><code class="html">&lt;!-- display property --&gt;
+&lt;div class="d-block md:d-none"&gt;&lt;/div&gt;
+
+&lt;div class="xsOnly:d-none"&gt;Something not for smallest screens&lt;/div&gt;
+
+&lt;div class="print:d-none"&gt;&lt;/div&gt;
+
+&lt;!-- visibility --&gt;
+&lt;div class="visuallyHidden"&gt;&lt;/div&gt;
+
+&lt;!-- flexbox --&gt;
+&lt;div class="d-flex  justify-start md:justify-between  align-stretch"&gt;
+	&lt;div class="grow-1 shrink-0"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- rectangle Width and height. Might be used for responsive SVG icons --&gt;
+&lt;svg class="rect-40-50 md:rect-48 xl:rect-56"&gt;&lt;/svg&gt;
+
+&lt;!-- grid --&gt;
+&lt;div class="row  gap-sm lg:gap-md"&gt;
+	&lt;div class="col-12 md:col-4 lg:col-3"&gt;
+
+	&lt;/div&gt;
+	&lt;div class="col-12 md:col-8 lg:col-9"&gt;
+
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+				<h4>Text</h4>
+
+				<pre><code class="html">&lt;!-- font size, weight and color --&gt;
+&lt;span class="fz-3xl fw-extraBold color-major"&gt;&lt;/span&gt;</code></pre>
+
+				<h4>Anything</h4>
+
+				<pre><code class="html">&lt;div class="whatItDoesOrMeans"&gt;&lt;/div&gt;
+
+&lt;div class="visuallyHidden"&gt;&lt;/div&gt;
+
+&lt;div class="home:ironVapor-puff"&gt;&lt;/div&gt;</code></pre>
+
+				<h2 id="component">Component</h2>
+
+				<h3 id="component-anatomy">Anatomy</h3>
 
 				<pre><code class="html">&lt;article class="SomeBlock SomeBlock--modifier do-scriptMagic is-stateModifier"&gt;
 	&lt;header class="SomeBlock__element"&gt;
@@ -57,160 +117,54 @@
 	&lt;/header&gt;
 	&lt;div class="SomeBlock__anotherElement"&gt;
 
-		&lt;div class="row  gap-xs md:gap-sm"&gt;
-			&lt;div class="col-12 md:col-4 lg:col-3"&gt;
-
-				&lt;a href="#goThere" class="fw-bold fz-lg"&gt;Something to click&lt;/a&gt;
-
-			&lt;/div&gt;
-			&lt;div class="col-12 md:col-8 lg:col-9"&gt;
-
-				&lt;p class="color-brand fz-md"&gt;Something to read&lt;/p&gt;
-				&lt;p class="color-major xsOnly:d-none"&gt;Something not for smallest screens&lt;/p&gt;
-
-			&lt;/div&gt;
-		&lt;/div&gt;
-
 	&lt;/div&gt;
 &lt;/article&gt;</code></pre>
 
-				Is based on using two entities - utility and component
-				- сочетание сущностей Утилита и Компонент типа БЭМ
-				utility and component
-
-				SMACSS (.is- .has-)
-					Atomic CSS (.ml- .text-center)
-					BEM
-					OOCSS (.container)
-
-					+ https://www.creativebloq.com/features/a-web-designers-guide-to-css-methodologies
-
-				<h2 id="utility" class="color-minor">Utility</h2>
-
-				<h3 id="utility-anatomy">Utility anatomy</h3>
-
-				<p><code>[media:]subject[-value]</code></p>
-				<p><code>[mediaPoint:]whatItDoesOrMean[-specificValue]</code></p>
-
 				<ul>
-					<li>Media and value are optional</li>
-					<li>All the parts of a utility are in camel case</li>
+					<li><code>.SomeBlock</code> — block name in PascalCase</li>
+					<li><code>.SomeBlock__innerBlock</code> — element in camelCase</li>
+					<li><code>.SomeBlock--modifier</code> — modifier in camelCase</li>
 				</ul>
 
-				<h3 id="utility-examples">Utility examples</h3>
+				<h3 id="component-modifiers">Prefixed modifiers</h3>
 
 				<ul>
-					<li>Media part examples <code>sm:</code> <code>md:</code> <code>lg:</code> <code>xl:</code> <code>mdDown:</code> <code>xsOnly:</code> <code>print:</code> <code>iron:</code></li>
-					<li>Value part examples <code>-major</code> <code>-3xl</code> <code>-extraBold</code> <code>-100</code> <code>-180deg</code> <code>-38parrots</code></li>
-				</ul>
-
-				<pre>
-				- margin, padding, width
-					- sm:py-2 sm:py-sm
-				- text
-				- grid
-				- custom
-				md:jc-between
-				xsOnly:d-none
-				print:d-none
-				sm:gap-sm
-				sm:gap-3xl
-				</pre>
-
-				<ul>
-					<li>Сетка <code>.row</code>, <code>.col-*</code>, <code>.grid</code>, <code>.gutter-*</code></li>
-					<li>Утилиты
-						<ul class="list">
-							<li>Кастомные <code>.whatItDoesOrMeans</code> (<code>.expandLinkArea</code>, <code>.visuallyHidden</code>)</li>
-							<li>Атомарные
-								<ul class="list">
-									<li>блочные: <code>d</code>, <code>.justify-*</code>, <code>.align-*</code></li>
-									<li>поля и отступы <code>.p-*</code> <code>.mx-*</code></li>
-									<li>текстовые: <code>.text-*</code>, <code>.font-*</code>, <code>.color-*</code>, <code>.list-*</code> (<code>.fontSize-sm</code>)</li>
-								</ul>
-							</li>
-						</ul>
+					<li><code>.is-*</code> — component state modifier (<code>is-selected</code>)</li>
+					<li><code>.has-*</code> — state or presence of a descendant (<code>has-error</code>)</li>
+					<li>
 					</li>
+					<li><code>.do-*</code> — the hook for using in scripts</li>
+					<li>Global context modifier with G prefix. <code>.G-*</code> (<code>.G-logged</code>, <code>.G-admin</code>). If necessary you can add global context classes to the body tag.</li>
 				</ul>
 
-				<h3 id="utility-exception">Exception</h3>
+				<p>
+					Don't worry, it's okay that prefixed modifiers looks like a utilities.
+					The main thing is that they have meaningful names. <code>do-blockExpand</code> for example.
+				</p>
 
-				<p>Global context utility with G prefix. <code>.G-*</code> (<code>.G-logged</code>, <code>.G-admin</code>). If necessary you can add global context classes to the body tag.</p>
+				<h3 id="component-avoid" class="color-danger">Avoid</h3>
 
-				<h2 id="bem" class="color-minor">Block-Element-Modifier</h2>
+				<p>Mixing components <code class="html">&lt;div class="SomeBlock AnotherBlock"&gt;&lt;/div&gt;</code></p>
 
-				<h3 id="bem-anatomy">Anatomy</h3>
+			</div>
+			<div class="Footer">
+				<div class="Footer__top">
+					<div class="container">
 
-				<code>.Block</code> <code>.Block__element</code> <code>.Block--modifier</code>
+						<!-- <h4>Other projects</h4> -->
 
-				<h3 id="bem-modifiers">Modifiers</h3>
+					</div>
+				</div>
+				<div class="Footer__bottom">
+					<div class="container">
 
-				<ul>
-					<li><code>.SomeBlock</code> - блок (TitleCase)</li>
-					<li><code>.SomeBlock__innerBlock</code> — элемент</li>
-				</ul>
+						<!-- meta -->
 
-				<ul>
-					<li>Модификаторы:
-						<ul>
-							<li><code>.SomeBlock--modifier</code> — модификатор (camelCase)</li>
-							<li><code>.is-*</code> — состояние блока (<code>is-selected</code>)</li>
-							<li><code>.has-*</code> — наличие потомка, или состояние (<code>has-error</code> например)</li>
-						</ul>
-					</li>
-					<li><code>.do-*</code> — префикс классов для навешивания скриптов</li>
-				</ul>
-
-				<pre>
-
-				### Reserved prefixed modifier
-
-				`.do-` the hook for using in scripts
-
-				`.is-` component state modifier
-
-				`.has-` state or present of a descendant
-
-				`.G-` global context class
-
-				Don't worry, it's okay that prefixed modifiers looks like a utilities.
-				The main thing is that they have meaningful names. `do-blockExpand` for example.
-
-				(you can use more)
-
-				### Denied
-
-				+ components mixing
-				~~`&lt;div class="OneBlock AnotherBlock"&gt;`~~
-
-				</pre>
-
-				<hr>
-
-				<h3 class="color-danger">Нельзя</h3>
-
-				<h5>Скрещивать блоки</h5>
-				<p><code class="html">&lt;div class="SomeBlock AnotherBlock"&gt;&lt;/div&gt;</code></p>
-
+					</div>
+				</div>
 			</div>
 		</main>
 
-		<!-- <div class="Footer">
-			<div class="Footer__top">
-				<div class="container">
-
-
-
-				</div>
-			</div>
-			<div class="Footer__bottom">
-				<div class="container">
-
-
-
-				</div>
-			</div>
-		</div> -->
 
 	</div>
 

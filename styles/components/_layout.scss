@@ -10,7 +10,7 @@ body {
 
 .Sidepanel {
 	height: 100vh;
-	width: 280px;
+	width: 250px;
 	flex: 0 0 auto;
 	display: flex;
 	flex-direction: column;
@@ -33,7 +33,7 @@ body {
 .Sidepanel hr {
 	margin-top: 1.75rem;
 	margin-bottom: 2rem;
-	border-color: rgba(225,225,255, .22);
+	border-color: rgba(225,225,255, .15);
 	width: 100%;
 }
 
@@ -66,7 +66,8 @@ body {
 .SideNav ul {
 	@include listReset;
 	font-size: .875rem;
-	line-height: 1.35;
+	font-size: 1rem;
+	line-height: 1.3;
 }
 
 .SideNav ul ul {
@@ -92,4 +93,5 @@ body {
 
 .Main {
 	overflow: auto;
+	flex: 1 1 auto;
 }

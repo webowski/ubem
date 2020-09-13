@@ -1,8 +1,8 @@
-.SiteFooter {
+.Footer {
 	cursor: default;
 }
 
-.SiteFooter__top {
+.Footer__top {
 	padding-top: 24px;
 	padding-bottom: 24px;
 	background-color: #323239;
@@ -14,19 +14,19 @@
 	}
 }
 
-.SiteFooter__top a {
+.Footer__top a {
 	@include linkReset;
 }
 
-.SiteFooter__top a {
+.Footer__top a {
 	color: $white;
 }
 
-.SiteFooter__top a:hover {
+.Footer__top a:hover {
 	color: $brand;
 }
 
-.SiteFooter__hr {
+.Footer__hr {
 	border: 0 none;
 	border-top: 1px solid rgba(255,255,255,.06);
 	margin-top: 40px;
@@ -45,7 +45,7 @@
 	margin-top: 12px;
 }
 
-.SiteFooter__bottom {
+.Footer__bottom {
 	padding-top: 28px;
 	padding-bottom: 28px;
 	background-color: #2d2d33;
@@ -54,16 +54,16 @@
 	line-height: 20px;
 }
 
-.SiteFooter__bottom a {
+.Footer__bottom a {
 	color: rgba(255,255,255,.4);
 }
 
-.SiteFooter__bottom a:hover {
+.Footer__bottom a:hover {
 	color: $white;
 	border-bottom-color: $white;
 }
 
-.SiteFooter__storeLink {
+.Footer__storeLink {
 	display: block;
 	width: 42px;
 
@@ -72,11 +72,11 @@
 	}
 }
 
-.SiteFooter__storeLink img {
+.Footer__storeLink img {
 	display: block;
 }
 
-.SiteFooter__logo {
+.Footer__logo {
 	width: 88px;
 	display: block;
 

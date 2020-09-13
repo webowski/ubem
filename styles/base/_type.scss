@@ -68,8 +68,9 @@ h1, .h1 {
 }
 
 h2, .h2 {
-	margin-top: 2.5rem;
+	margin-top: 3rem;
 	font-size: 22px;
+	font-weight: 800;
 
 	@include mediaUp(md) {
 		font-size: 30px;
@@ -79,6 +80,7 @@ h2, .h2 {
 h3, .h3 {
 	margin-top: 1.5rem;
 	font-size: 20px;
+	color: $minor;
 
 	@include mediaUp(md) {
 		font-size: 24px;
@@ -86,8 +88,12 @@ h3, .h3 {
 }
 
 h4, .h4 {
+	// text-transform: uppercase;
+	// color: $minor;
+	// font-weight: normal;
 	margin-top: 1.2rem;
-	font-size: 20px;
+	font-size: 1.2rem;
+	margin-bottom: .5rem;
 }
 
 h5, .h5 {
@@ -97,56 +103,6 @@ h5, .h5 {
 h6, .h6 {
 	font-size: 16px;
 }
-
-code {
-	font-family: $fontMono;
-	border-radius: 3px;
-	color: #eb5a46;
-	padding: 2px 3px;
-	margin: -1px 2px;
-	font-size: 15px;
-	line-height: inherit;
-	color: #e83e8c;
-	word-wrap: break-word;
-	background-color: #f0f0f4;
-}
-
-pre {
-	-webkit-overflow-scrolling: touch;
-	-webkit-transform: translateZ(0);
-	background-color: #f0f0f4;
-	border-radius: 6px;
-	margin: 12px 0;
-	padding: 10px 12px;
-	word-break: normal;
-	word-wrap: normal;
-	overflow-wrap: normal;
-	tab-size: 4;
-	font-family: $fontMono;
-	font-size: 14px;
-	line-height: 1.2;
-}
-
-pre code {
-	background-color: none;
-	border-radius: 3px;
-	box-shadow: none;
-	color: #172b4d;
-	margin: 0;
-	padding: 0;
-	color: #e83e8c;
-}
-
-
-	pre {
-		padding: 0;
-		background-color: transparent;
-	}
-
-	pre code {
-		background-color: transparent;
-		padding: 24px 26px !important;
-	}
 
 ul {
 	margin-top: 1rem;
@@ -169,11 +125,11 @@ ul > li {
 }
 
 ul > li:before {
-	@include pseudoBlock(7px, 7px);
+	@include pseudoBlock(5px, 5px);
 	top: .55rem;
-	left: 2px;
-	background-color: $brand;
-	border-radius: 8px;
+	left: 3px;
+	background-color: lighten($major, 15);
+	border-radius: 5px;
 }
 
 ul > li:first-child {

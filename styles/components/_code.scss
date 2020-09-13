@@ -1,13 +1,65 @@
 :root {
-	--code-string:       #eae085;
-	// --code-string:       #B29D4A;
+	--code-string:       #f5f0a0;
 	// --code-bg:           #343f52;
 	// --code-bg:           #2a212F;
-	--code-bg:           #403c4F;
+	// --code-bg:           #403c4F;
+    --code-bg:           #302c3F;
 	// --code-bg:           #343F52;
 	--code-fore:         #fff;
 	--code-tag:          #62c8f3;
+    --code-comment:      #77777f;
 }
+
+code {
+    font-family: $fontMono;
+    border-radius: 3px;
+    color: #eb5a46;
+    padding: 2px 3px;
+    margin: -1px 2px;
+    font-size: 15px;
+    line-height: inherit;
+    color: #e83e8c;
+    word-wrap: break-word;
+    background-color: #f0f0f4;
+}
+
+pre {
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translateZ(0);
+    background-color: #f0f0f4;
+    border-radius: 6px;
+    margin: 12px 0;
+    padding: 10px 12px;
+    word-break: normal;
+    word-wrap: normal;
+    overflow-wrap: normal;
+    tab-size: 4;
+    font-family: $fontMono;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+pre code {
+    background-color: none;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #172b4d;
+    margin: 0;
+    padding: 0;
+    color: #e83e8c;
+    font-size: inherit;
+}
+
+
+    pre {
+        padding: 0;
+        background-color: transparent;
+    }
+
+    pre code {
+        background-color: transparent;
+        padding: 24px 26px !important;
+    }
 
 .hljs {
     display: block;
@@ -39,7 +91,7 @@
 .hljs-bullet,
 .hljs-string {
     color: #a2fca2;
-    color: var(--string);
+    color: var(--code-string);
 }
 .hljs-attribute,
 .hljs-built_in,
@@ -63,7 +115,9 @@
 .hljs-code,
 .hljs-comment,
 .hljs-deletion {
-    color: #888
+    // color: #888;
+    color: var(--code-comment);
+    font-style: italic;
 }
 .hljs-link,
 .hljs-regexp {
