@@ -64,28 +64,29 @@
 
 				<h3 id="utility-examples">Utility examples</h3>
 
-				<h4>Block</h4>
+				<h4>Display property</h4>
 
-				<pre><code class="html">&lt;!-- display property --&gt;
-&lt;div class="d-block md:d-none"&gt;&lt;/div&gt;
+				<pre><code class="html">&lt;div class="d-block md:d-none"&gt;&lt;/div&gt;
 
 &lt;div class="xsOnly:d-none"&gt;Something not for smallest screens&lt;/div&gt;
 
 &lt;div class="print:d-none"&gt;&lt;/div&gt;
 
-&lt;!-- visibility --&gt;
-&lt;div class="visuallyHidden"&gt;&lt;/div&gt;
-
-&lt;!-- flexbox --&gt;
 &lt;div class="d-flex  justify-start md:justify-between  align-stretch"&gt;
 	&lt;div class="grow-1 shrink-0"&gt;&lt;/div&gt;
-&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
-&lt;!-- rectangle Width and height. Might be used for responsive SVG icons --&gt;
-&lt;svg class="rect-40-50 md:rect-48 xl:rect-56"&gt;&lt;/svg&gt;
+				<h4>Visibility</h4>
 
-&lt;!-- grid --&gt;
-&lt;div class="row  gap-sm lg:gap-md"&gt;
+<pre><code class="html">&lt;div class="visuallyHidden"&gt;&lt;/div&gt;</code></pre>
+
+				<h4>Rectangle width and height</h4>
+
+<pre><code class="html">&lt;svg class="rect-40-50 md:rect-48 xl:rect-56"&gt;&lt;/svg&gt;</code></pre>
+
+				<h4>Grid</h4>
+
+<pre><code class="html">&lt;div class="row  gap-sm lg:gap-md"&gt;
 	&lt;div class="col-12 md:col-4 lg:col-3"&gt;
 
 	&lt;/div&gt;
@@ -94,10 +95,9 @@
 	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-				<h4>Text</h4>
+				<h4>Font size, weight and color</h4>
 
-				<pre><code class="html">&lt;!-- font size, weight and color --&gt;
-&lt;span class="fz-3xl fw-extraBold color-major"&gt;&lt;/span&gt;</code></pre>
+				<pre><code class="html">&lt;span class="fz-3xl fw-extraBold color-major"&gt;&lt;/span&gt;</code></pre>
 
 				<h4>Anything</h4>
 
@@ -121,25 +121,25 @@
 &lt;/article&gt;</code></pre>
 
 				<ul>
-					<li><code>.SomeBlock</code> — block name in PascalCase</li>
-					<li><code>.SomeBlock__innerBlock</code> — element in camelCase</li>
-					<li><code>.SomeBlock--modifier</code> — modifier in camelCase</li>
+					<li><code>SomeBlock</code> — block name in PascalCase</li>
+					<li><code>SomeBlock__innerBlock</code> — element in camelCase</li>
+					<li><code>SomeBlock--modifier</code> — modifier in camelCase</li>
 				</ul>
 
 				<h3 id="component-modifiers">Prefixed modifiers</h3>
 
 				<ul>
-					<li><code>.is-*</code> — component state modifier (<code>is-selected</code>)</li>
-					<li><code>.has-*</code> — state or presence of a descendant (<code>has-error</code>)</li>
+					<li><code>is-</code> — component state modifier (<code>is-selected</code>)</li>
+					<li><code>has-</code> — state or presence of a descendant (<code>has-error</code>)</li>
 					<li>
 					</li>
-					<li><code>.do-*</code> — the hook for using in scripts</li>
-					<li>Global context modifier with G prefix. <code>.G-*</code> (<code>.G-logged</code>, <code>.G-admin</code>). If necessary you can add global context classes to the body tag.</li>
+					<li><code>do-</code> — the hook for using in scripts</li>
+					<li>Global context modifier with <code>G-</code> prefix. (<code>G-logged</code>, <code>G-admin</code>). If necessary you can add global context classes to the <code>&lt;body&gt;</code> tag</li>
 				</ul>
 
 				<p>
 					Don't worry, it's okay that prefixed modifiers looks like a utilities.
-					The main thing is that they have meaningful names. <code>do-blockExpand</code> for example.
+					The main thing is that they have meaningful names, <code>do-blockExpand</code> for example.
 				</p>
 
 				<h3 id="component-avoid" class="color-danger">Avoid</h3>
