@@ -62,7 +62,7 @@ h1, .h1 {
 	line-height: 1.2;
 
 	@include mediaUp(md) {
-		font-size: 36px;
+		font-size: 32px;
 		line-height: 1.05;
 	}
 }
@@ -80,7 +80,6 @@ h2, .h2 {
 h3, .h3 {
 	margin-top: 1.5rem;
 	font-size: 20px;
-	color: $minor;
 
 	@include mediaUp(md) {
 		font-size: 24px;
@@ -91,6 +90,7 @@ h4, .h4 {
 	// text-transform: uppercase;
 	// color: $minor;
 	// font-weight: normal;
+	color: $minor;
 	margin-top: 1.2rem;
 	font-size: 1.2rem;
 	margin-bottom: .5rem;
