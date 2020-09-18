@@ -11,7 +11,7 @@ module.exports = (gulp, tools) => {
 		})
 
 		let newContents = Buffer.concat([
-			new Buffer( scssPrepend ),
+			Buffer.from( scssPrepend ),
 			vinyl.contents
 		])
 
