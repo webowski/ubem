@@ -46,7 +46,7 @@
 		<main class="Main">
 			<div class="Section container">
 
-				<p id="intro" class="fz-xl lh-130">Yes, yet another CSS naming system. Here is nothing new, just a useful set of known practices.</p>
+				<p id="intro" class="fz-xl lh-130">Yes, yet another CSS naming system. Here is nothing new, just a&nbsp;useful set of known practices.</p>
 
 				<p>UBEM is based on using two entities - utility and component. The main goal is to use most recognizable combination of letter cases and parts separators.</p>
 
@@ -98,7 +98,7 @@
 
 				<h4>Font size, weight and color</h4>
 
-				<pre><code class="html">&lt;span class="fz-3xl fw-extraBold color-major"&gt;&lt;/span&gt;</code></pre>
+				<pre><code class="html">&lt;span class="fz-400 fw-800 color-major"&gt;&lt;/span&gt;</code></pre>
 
 				<h4>Anything</h4>
 
@@ -112,7 +112,7 @@
 
 				<h3 id="component-anatomy">Anatomy</h3>
 
-				<pre><code class="html">&lt;article class="SomeBlock SomeBlock--modifier do-scriptMagic is-stateModifier"&gt;
+				<pre><code class="html">&lt;article class="SomeBlock -modifier do-scriptMagic is-stateModifier"&gt;
 	&lt;header class="SomeBlock__element"&gt;
 
 	&lt;/header&gt;
@@ -124,7 +124,7 @@
 				<ul>
 					<li><code>SomeBlock</code> — block name in PascalCase</li>
 					<li><code>SomeBlock__innerBlock</code> — element in camelCase</li>
-					<li><code>SomeBlock--modifier</code> — modifier in camelCase</li>
+					<li><code>-modifier</code> — modifier in camelCase</li>
 				</ul>
 
 				<h3 id="component-modifiers">Prefixed modifiers</h3>
