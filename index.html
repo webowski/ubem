@@ -19,17 +19,17 @@
 				<nav class="SideNav">
 					<ul>
 						<li><a href="#intro">Intro</a></li>
-						<li><a href="#utility">Utility</a>
-							<ul>
-								<li><a href="#utility-anatomy">Anatomy</a></li>
-								<li><a href="#utility-examples">Examples</a></li>
-							</ul>
-						</li>
 						<li><a href="#component">Component</a>
 							<ul>
 								<li><a href="#component-anatomy">Anatomy</a></li>
 								<li><a href="#component-modifiers">Modifiers</a></li>
 								<li><a href="#component-avoid">Avoid</a></li>
+							</ul>
+						</li>
+						<li><a href="#utility">Utility</a>
+							<ul>
+								<li><a href="#utility-anatomy">Anatomy</a></li>
+								<li><a href="#utility-examples">Examples</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -49,6 +49,42 @@
 				<p id="intro" class="fz-xl lh-130">Yes, yet another CSS naming system. Here is nothing new, just a&nbsp;useful set of known practices.</p>
 
 				<p>UBEM is based on using two entities - utility and component. The main goal is to use most recognizable combination of letter cases and parts separators.</p>
+
+				<h2 id="component">Component</h2>
+
+				<h3 id="component-anatomy">Anatomy</h3>
+
+				<pre><code class="html">&lt;article class="SomeBlock -modifier do-scriptMagic is-stateModifier"&gt;
+	&lt;header class="SomeBlock__element"&gt;
+
+	&lt;/header&gt;
+	&lt;div class="SomeBlock__anotherElement"&gt;
+
+	&lt;/div&gt;
+&lt;/article&gt;</code></pre>
+
+				<ul>
+					<li><code>SomeBlock</code> — a block name in pascal case</li>
+					<li><code>-modifier</code> — a chainable modifier in camel case with a hyphen prefix</li>
+					<li><code>SomeBlock__innerBlock</code> — an element in camel case prefixed with the block name and double underscore</li>
+				</ul>
+
+				<h3 id="component-modifiers">Prefixed modifiers</h3>
+
+				<ul>
+					<li><code>is-</code> — component state modifier (<code>is-selected</code>)</li>
+					<li><code>has-</code> — state or presence of a descendant (<code>has-error</code>)</li>
+					<li>
+					</li>
+					<li><code>do-</code> — the hook for using in scripts</li>
+					<li>Global context modifier with <code>G-</code> prefix. (<code>G-logged</code>, <code>G-admin</code>). If necessary you can add global context classes to the <code>&lt;body&gt;</code> tag</li>
+				</ul>
+
+				<p>It's okay that prefixed modifiers looks like utilities. The main thing is that they have meaningful names, <code>do-blockExpand</code> for example.</p>
+
+				<h3 id="component-avoid" class="color-danger">Avoid</h3>
+
+				<p>Mixing components <code class="html">&lt;div class="SomeBlock AnotherBlock"&gt;&lt;/div&gt;</code></p>
 
 				<h2 id="utility">Utility</h2>
 
@@ -107,42 +143,6 @@
 &lt;div class="visuallyHidden"&gt;&lt;/div&gt;
 
 &lt;div class="home:ironVapor-puff"&gt;&lt;/div&gt;</code></pre>
-
-				<h2 id="component">Component</h2>
-
-				<h3 id="component-anatomy">Anatomy</h3>
-
-				<pre><code class="html">&lt;article class="SomeBlock -modifier do-scriptMagic is-stateModifier"&gt;
-	&lt;header class="SomeBlock__element"&gt;
-
-	&lt;/header&gt;
-	&lt;div class="SomeBlock__anotherElement"&gt;
-
-	&lt;/div&gt;
-&lt;/article&gt;</code></pre>
-
-				<ul>
-					<li><code>SomeBlock</code> — a block name in pascal case</li>
-					<li><code>-modifier</code> — a chainable modifier in camel case with a hyphen prefix</li>
-					<li><code>SomeBlock__innerBlock</code> — an element in camel case prefixed with the block name and double underscore</li>
-				</ul>
-
-				<h3 id="component-modifiers">Prefixed modifiers</h3>
-
-				<ul>
-					<li><code>is-</code> — component state modifier (<code>is-selected</code>)</li>
-					<li><code>has-</code> — state or presence of a descendant (<code>has-error</code>)</li>
-					<li>
-					</li>
-					<li><code>do-</code> — the hook for using in scripts</li>
-					<li>Global context modifier with <code>G-</code> prefix. (<code>G-logged</code>, <code>G-admin</code>). If necessary you can add global context classes to the <code>&lt;body&gt;</code> tag</li>
-				</ul>
-
-				<p>It's okay that prefixed modifiers looks like utilities. The main thing is that they have meaningful names, <code>do-blockExpand</code> for example.</p>
-
-				<h3 id="component-avoid" class="color-danger">Avoid</h3>
-
-				<p>Mixing components <code class="html">&lt;div class="SomeBlock AnotherBlock"&gt;&lt;/div&gt;</code></p>
 
 			</div>
 			<div class="Footer">
